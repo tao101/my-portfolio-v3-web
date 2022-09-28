@@ -9,7 +9,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      color: {
+      colors: {
         main: {
           50: '#f2f5fb',
           100: '#e6edf9',
@@ -21,6 +21,18 @@ module.exports = {
           700: '#5656ac',
           800: '#48498b',
           900: '#1e1f35',
+        },
+        secondary: {
+          50: '#effaff',
+          100: '#dff4ff',
+          200: '#b8ebff',
+          300: '#78ddff',
+          400: '#33ccff',
+          500: '#06b5f1',
+          600: '#0092ce',
+          700: '#0075a7',
+          800: '#02628a',
+          900: '#085172',
         },
       },
       fontFamily: {

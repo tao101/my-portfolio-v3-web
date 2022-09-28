@@ -1,9 +1,9 @@
 import SocialIcons from '../socialIcons';
 
-export default function Footer() {
+export default function Footer({ settings }) {
   return (
-    <footer className="h-20  bg-red-200 flex items-center justify-around">
-      <SocialIcons />
+    <footer className="h-20 z-20 flex items-center justify-around">
+      <SocialIcons settings={settings} />
       <p>Footer</p>
     </footer>
   );

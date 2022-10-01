@@ -7,8 +7,14 @@ import { NextSeo } from 'next-seo';
 import Footer from '../components/footer';
 import SocialIcons from '../components/socialIcons';
 import { urlFor } from '../lib/sanity';
+import { useContext, useState } from 'react';
+import AppContext from '../lib/appContext';
+import MobileMenu from '../components/mobileMenu.js';
 
 export default function Home({ settings }) {
+  const { mobileMenuVisibility, setMobileMenuVisibility } =
+    useContext(AppContext);
+
   let seoTitle =
     settings?.seo?.title ??
     'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
@@ -43,6 +49,7 @@ export default function Home({ settings }) {
           ],
         }}
       />
+
       <div className="flex flex-col min-h-screen w-screen max-w-screen-2xl mx-auto ">
         <Header settings={settings} />
         <main className=" bg-white-100 flex-1">

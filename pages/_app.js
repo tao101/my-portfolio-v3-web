@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AppContext from '../lib/appContext';
 import '../styles/globals.css';
+import { motion } from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(true);

@@ -24,3 +24,8 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
+
+.herosection-imageanimation {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}

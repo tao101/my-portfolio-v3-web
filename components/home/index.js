@@ -1,9 +1,12 @@
 import SocialIcons from '../socialIcons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import { urlFor } from '../../lib/sanity';
 
 export default function Home({ settings, homePage }) {
   const description = homePage?.description;
+  const profilePic = homePage?.profilePic?.image;
+  const profilePicAlt = homePage?.profilePic?.alt;
   //console.log('description ', description);
   return (
     <>
@@ -14,8 +17,38 @@ export default function Home({ settings, homePage }) {
         <span className="border-r border-white border-opacity-5"></span>
         <span className="border-r border-white border-opacity-5"></span>
       </div>
-      <section className="h-screen z-20 flex flex-col  justify-center items-center">
+      <section className="h-screen z-20 flex flex-col   justify-center items-center">
         <motion.div
+          initial={{
+            opacity: 0,
+            y: '100%',
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
+          className="mb-5 relative z-20 flex justify-center items-center rounded-full  w-52 h-52   "
+        >
+          <div className="herosection-imageanimation absolute left-0 top-0 z-10 h-full w-full animate-spin rounded-full bg-gradient-to-tr from-secondary-400 to-transparent  "></div>
+          {/*
+            
+            */}
+          <div className="z-20 w-48 h-48  bg-transparent rounded-full overflow-hidden bg-main-900">
+            <img
+              alt={profilePicAlt}
+              src={urlFor(profilePic)}
+              className="w-48 h-48"
+            />
+          </div>
+        </motion.div>
+        <motion.h1
           initial={{
             opacity: 0,
             y: '100%',
@@ -53,7 +86,7 @@ export default function Home({ settings, homePage }) {
             wrapper="span" // Animation will be rendered as a <span>
             repeat={Infinity} // Repeat this Animation Sequence infinitely
           />
-        </motion.div>
+        </motion.h1>
 
         <AnimatePresence>
           {homePage && (
@@ -83,7 +116,24 @@ export default function Home({ settings, homePage }) {
         <div className="z-20 mt-5">
           <SocialIcons settings={settings} />
         </div>
-        <div className=" z-20 absolute left-0 top-auto bottom-10 w-full justify-between text-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: '100%',
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.6,
+          }}
+          className=" z-20 absolute left-0 top-auto bottom-10 w-full justify-between text-center"
+        >
           <a className="cursor-pointer z-20 text-[#bfbecb] text-xs font-medium uppercase tracking-widest transition-all hover:text-secondary-400 antialiased ">
             <svg
               stroke="currentColor"
@@ -104,7 +154,7 @@ export default function Home({ settings, homePage }) {
               SCROLL DOWN
             </span>
           </a>
-        </div>
+        </motion.div>
       </section>
     </>
   );

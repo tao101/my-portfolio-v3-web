@@ -1,20 +1,22 @@
 import { useState } from 'react';
 import AppContext from '../lib/appContext';
 import '../styles/globals.css';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
 
   return (
-    <AppContext.Provider
-      value={{
-        mobileMenuVisibility,
-        setMobileMenuVisibility,
-      }}
-    >
-      <Component {...pageProps} />
-    </AppContext.Provider>
+    <AnimatePresence>
+      <AppContext.Provider
+        value={{
+          mobileMenuVisibility,
+          setMobileMenuVisibility,
+        }}
+      >
+        <Component {...pageProps} />
+      </AppContext.Provider>
+    </AnimatePresence>
   );
 }
 

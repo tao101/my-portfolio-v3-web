@@ -1,15 +1,25 @@
 import Link from 'next/link';
 import { useContext } from 'react';
 import AppContext from '../../lib/appContext';
+import { motion } from 'framer-motion';
 
 export default function MobileMenu() {
   const { mobileMenuVisibility, setMobileMenuVisibility } =
     useContext(AppContext);
+
+  const animationVariants = {};
+
   return (
-    <div
-      style={{
-        transform: 'translateY(0vh) translateZ(0px)',
+    <motion.div
+      key="mobileMenu"
+      initial={{ y: '100%' }}
+      animate={{
+        y: '0%',
       }}
+      exit={{
+        y: '-100%',
+      }}
+      transition={{ delay: 0.1, duration: 0.4 }}
       className="fixed flex flex-col bg-main-900 z-50 w-screen h-screen lg:hidden p-2 pl-3 pr-3"
     >
       <div className="flex justify-end ">
@@ -34,7 +44,7 @@ export default function MobileMenu() {
         </div>
       </div>
       <div className="p-2  h-80  grow ">
-        <ul className="pb-[34px] flex flex-col justify-center items-center h-full	">
+        <motion.ul className="pb-[34px] flex flex-col justify-center items-center h-full	">
           <li>
             <Link href="/">
               <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
@@ -84,8 +94,8 @@ export default function MobileMenu() {
               </a>
             </Link>
           </li>
-        </ul>
+        </motion.ul>
       </div>
-    </div>
+    </motion.div>
   );
 }

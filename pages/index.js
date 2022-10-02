@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/header';
-import { getWebsiteSettings } from '../lib/sanityHelpers';
+import { getIndexPage } from '../lib/sanityHelpers';
 import styles from '../styles/Home.module.css';
 import { NextSeo } from 'next-seo';
 import Footer from '../components/footer';
@@ -10,11 +10,9 @@ import { urlFor } from '../lib/sanity';
 import { useContext, useState } from 'react';
 import AppContext from '../lib/appContext';
 import MobileMenu from '../components/mobileMenu.js';
+import Home from '../components/home';
 
-export default function Home({ settings }) {
-  const { mobileMenuVisibility, setMobileMenuVisibility } =
-    useContext(AppContext);
-
+export default function Index({ settings, homePage }) {
   let seoTitle =
     settings?.seo?.title ??
     'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
@@ -53,21 +51,7 @@ export default function Home({ settings }) {
       <div className="flex flex-col min-h-screen w-screen max-w-screen-2xl mx-auto ">
         <Header settings={settings} />
         <main className=" bg-white-100 flex-1">
-          <div className="bglines fixed left-0 top-0 flex h-screen z-10	 w-full justify-around">
-            <span className="border-r border-white border-opacity-5"></span>
-            <span className="border-r border-white border-opacity-5"></span>
-            <span className="border-r border-white border-opacity-5"></span>
-            <span className="border-r border-white border-opacity-5"></span>
-            <span className="border-r border-white border-opacity-5"></span>
-          </div>
-          <section className="h-screen  flex flex-col justify-center items-center	  ">
-            <p className="text-secondary-400 font-bold text-3xl">LOTFI</p>
-            <p>2</p>
-
-            <div className="z-20">
-              <SocialIcons settings={settings} />
-            </div>
-          </section>
+          <Home settings={settings} homePage={homePage} />
         </main>
         <Footer settings={settings} />
       </div>
@@ -76,11 +60,12 @@ export default function Home({ settings }) {
 }
 
 export async function getStaticProps(context) {
-  const settings = await getWebsiteSettings();
+  const { websiteSettings, homePage } = await getIndexPage();
 
   return {
     props: {
-      settings,
+      settings: websiteSettings,
+      homePage,
     }, // will be passed to the page component as props
   };
 }

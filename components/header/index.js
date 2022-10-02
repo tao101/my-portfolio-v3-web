@@ -27,7 +27,7 @@ export default function Header({ settings }) {
         <div className="lg:hidden">
           <button
             onClick={() => setMobileMenuVisibility(true)}
-            className="group relative text-secondary-400 bg-secondary-400/10 p-2 w-fit rounded-md cursor-pointer hover:text-black hover:bg-white hover:transition-colors duration-500 lg:hidden"
+            className="group  relative text-secondary-400 bg-secondary-400/10 p-2 w-fit rounded-md cursor-pointer hover:text-black hover:bg-white hover:transition-colors duration-500 lg:hidden"
           >
             <div className="absolute rounded-md w-6 h-6 p-2 animate-ping bg-secondary-400/50  "></div>
             <svg
@@ -47,13 +47,13 @@ export default function Header({ settings }) {
           </button>
         </div>
         <div className="hidden lg:flex grow  justify-end  ">
-          <ul className=" flex-1 flex justify-center items-center">
+          <ul className="flex-1 flex justify-center items-center ">
             <li className="mx-2">
               <Link href="/">
                 <a
                   onMouseEnter={() => setHoverdItem('Home')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-secondary-400 hover:text-secondary-400 overflow-hidden"
+                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-secondary-400 hover:text-secondary-400 overflow-hidden"
                 >
                   Home
                   <AnimatePresence>
@@ -82,7 +82,7 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('About')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
                 >
                   About
                   <AnimatePresence>
@@ -111,7 +111,7 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('RESUME')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
                 >
                   RESUME
                   <AnimatePresence>
@@ -140,7 +140,7 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('WORKS')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
                 >
                   WORKS
                   <AnimatePresence>
@@ -169,7 +169,7 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('BLOG')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
                 >
                   BLOG
                   <AnimatePresence>
@@ -198,7 +198,7 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('CONTACT')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
                 >
                   CONTACT
                   <AnimatePresence>

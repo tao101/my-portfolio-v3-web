@@ -4,7 +4,7 @@ import '../styles/globals.css';
 import { motion } from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
-  const [mobileMenuVisibility, setMobileMenuVisibility] = useState(true);
+  const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
 
   return (
     <AppContext.Provider

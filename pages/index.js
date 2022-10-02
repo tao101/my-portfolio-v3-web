@@ -50,7 +50,7 @@ export default function Index({ settings, homePage }) {
 
       <div className="flex flex-col min-h-screen w-screen max-w-screen-2xl mx-auto ">
         <Header settings={settings} />
-        <main className=" bg-white-100 flex-1">
+        <main className="px-2 bg-white-100 flex-1">
           <Home settings={settings} homePage={homePage} />
         </main>
         <Footer settings={settings} />

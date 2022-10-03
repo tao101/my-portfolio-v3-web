@@ -12,6 +12,7 @@ body {
   background-color: #1e1f35;
   min-width: '100vw';
   min-height: '100vh';
+  scroll-behavior: smooth;
 }
 
 a {
@@ -26,6 +27,6 @@ a {
 }
 
 .herosection-imageanimation {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
 }

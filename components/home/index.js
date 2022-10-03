@@ -10,7 +10,10 @@ export default function Home({ settings, homePage }) {
   //console.log('description ', description);
   return (
     <>
-      <div className=" absolute left-0 top-0 flex h-screen z-10	 w-full justify-around">
+      <div
+        id="home"
+        className=" absolute left-0 top-0 flex h-screen z-10	 w-full justify-around"
+      >
         <span className="border-r border-white border-opacity-5"></span>
         <span className="border-r border-white border-opacity-5"></span>
         <span className="border-r border-white border-opacity-5"></span>
@@ -37,9 +40,7 @@ export default function Home({ settings, homePage }) {
           className="mb-5 relative z-20 flex justify-center items-center rounded-full  w-52 h-52   "
         >
           <div className="herosection-imageanimation absolute left-0 top-0 z-10 h-full w-full animate-spin rounded-full bg-gradient-to-tr from-secondary-400 to-transparent  "></div>
-          {/*
-            
-            */}
+
           <div className="z-20 w-48 h-48  bg-transparent rounded-full overflow-hidden bg-main-900">
             <img
               alt={profilePicAlt}
@@ -134,7 +135,10 @@ export default function Home({ settings, homePage }) {
           }}
           className=" z-20 absolute left-0 top-auto bottom-10 w-full justify-between text-center"
         >
-          <a className="cursor-pointer z-20 text-[#bfbecb] text-xs font-medium uppercase tracking-widest transition-all hover:text-secondary-400 antialiased ">
+          <a
+            href="/#about"
+            className="cursor-pointer z-20 text-[#bfbecb] text-xs font-medium uppercase tracking-widest transition-all hover:text-secondary-400 antialiased "
+          >
             <svg
               stroke="currentColor"
               fill="currentColor"

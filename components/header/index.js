@@ -70,7 +70,7 @@ export default function Header({ settings }) {
                           x: '100%',
                         }}
                         transition={{ delay: 0.1, duration: 0.4 }}
-                        class="absolute  bottom-0 left-0  bg-secondary-900 w-full h-px 	 "
+                        class="absolute  bottom-0 left-0  bg-secondary-400 w-full h-px 	 "
                       ></motion.span>
                     )}
                   </AnimatePresence>
@@ -78,7 +78,7 @@ export default function Header({ settings }) {
               </Link>
             </li>
             <li className="mx-2">
-              <Link href="/">
+              <Link href="/#about">
                 <a
                   onMouseEnter={() => setHoverdItem('About')}
                   onMouseLeave={() => setHoverdItem('')}
@@ -99,7 +99,7 @@ export default function Header({ settings }) {
                           x: '100%',
                         }}
                         transition={{ delay: 0.1, duration: 0.4 }}
-                        class="absolute  bottom-0 left-0  bg-secondary-900 w-full h-px 	 "
+                        class="absolute  bottom-0 left-0  bg-secondary-400 w-full h-px 	 "
                       ></motion.span>
                     )}
                   </AnimatePresence>
@@ -128,7 +128,7 @@ export default function Header({ settings }) {
                           x: '100%',
                         }}
                         transition={{ delay: 0.1, duration: 0.4 }}
-                        class="absolute  bottom-0 left-0  bg-secondary-900 w-full h-px 	 "
+                        class="absolute  bottom-0 left-0  bg-secondary-400 w-full h-px 	 "
                       ></motion.span>
                     )}
                   </AnimatePresence>
@@ -157,7 +157,7 @@ export default function Header({ settings }) {
                           x: '100%',
                         }}
                         transition={{ delay: 0.1, duration: 0.4 }}
-                        class="absolute  bottom-0 left-0  bg-secondary-900 w-full h-px 	 "
+                        class="absolute  bottom-0 left-0  bg-secondary-400 w-full h-px 	 "
                       ></motion.span>
                     )}
                   </AnimatePresence>
@@ -186,7 +186,7 @@ export default function Header({ settings }) {
                           x: '100%',
                         }}
                         transition={{ delay: 0.1, duration: 0.4 }}
-                        class="absolute  bottom-0 left-0  bg-secondary-900 w-full h-px 	 "
+                        class="absolute  bottom-0 left-0  bg-secondary-400 w-full h-px 	 "
                       ></motion.span>
                     )}
                   </AnimatePresence>
@@ -215,7 +215,7 @@ export default function Header({ settings }) {
                           x: '100%',
                         }}
                         transition={{ delay: 0.1, duration: 0.4 }}
-                        class="absolute  bottom-0 left-0  bg-secondary-900 w-full h-px 	 "
+                        class="absolute  bottom-0 left-0  bg-secondary-400 w-full h-px 	 "
                       ></motion.span>
                     )}
                   </AnimatePresence>

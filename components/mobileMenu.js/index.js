@@ -19,7 +19,7 @@ export default function MobileMenu() {
       exit={{
         y: '-100%',
       }}
-      transition={{ delay: 0.1, duration: 0.4 }}
+      transition={{ delay: 0.1, duration: 0.5 }}
       className="fixed flex flex-col bg-main-900 z-50 w-screen h-screen lg:hidden p-2 pl-3 pr-3"
     >
       <div className="flex justify-end ">

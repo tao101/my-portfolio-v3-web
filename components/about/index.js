@@ -7,7 +7,7 @@ export default function About({ homePage }) {
   return (
     <section
       id="about"
-      className="h-screen z-20 flex flex-col   justify-center items-center"
+      className="min-h-screen mb-3 z-20 flex flex-col   justify-center items-center"
     >
       <SectionTitle title={aboutTitle} subTitle={aboutSubtitle} />
       <Introduction homePage={homePage} />

@@ -30,3 +30,16 @@ a {
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
 }
+.aboutMe > li {
+  list-style: none;
+  font-size: 20px;
+}
+
+.aboutMe > li:before {
+  content: '·';
+  font-size: 80px;
+  vertical-align: top;
+  line-height: 18px;
+  margin-right: 13px;
+  margin-left: -2px;
+}

@@ -17,7 +17,7 @@ export default function Header({ settings }) {
       <AnimatePresence>
         {mobileMenuVisibility && <MobileMenu />}
       </AnimatePresence>
-      <header className="header p-3 items-center   top-0 z-20 h-20 absolute w-screen max-w-screen-2xl mx-auto flex justify-between ">
+      <header className="header p-3 items-center   top-0 z-20 h-20 absolute w-screen max-w-screen-xl mx-auto flex justify-between ">
         <Link href="/">
           <a className="text-secondary-400 text-5xl	font-bold ">
             {title}
@@ -47,7 +47,7 @@ export default function Header({ settings }) {
           </button>
         </div>
         <div className="hidden lg:flex grow  justify-end  ">
-          <ul className="flex-1 flex justify-center items-center ">
+          <ul className="navBar flex-1 flex justify-center items-center ">
             <li className="mx-2">
               <Link href="/">
                 <a

@@ -12,6 +12,7 @@ import AppContext from '../lib/appContext';
 import MobileMenu from '../components/mobileMenu.js';
 import Home from '../components/home';
 import About from '../components/about';
+import Skills from '../components/skills';
 
 export default function Index({ settings, homePage }) {
   let seoTitle =
@@ -54,6 +55,7 @@ export default function Index({ settings, homePage }) {
         <main className="px-2 bg-white-100 flex-1">
           <Home settings={settings} homePage={homePage} />
           <About homePage={homePage} />
+          <Skills homePage={homePage} />
         </main>
         <Footer settings={settings} />
       </div>

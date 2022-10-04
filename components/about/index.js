@@ -1,5 +1,6 @@
 import Introduction from '../introduction';
 import SectionTitle from '../sectionTitle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function About({ homePage }) {
   const aboutTitle = homePage?.aboutTitle;

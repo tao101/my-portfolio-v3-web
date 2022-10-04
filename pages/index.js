@@ -53,7 +53,7 @@ export default function Index({ settings, homePage }) {
         <Header settings={settings} />
         <main className="px-2 bg-white-100 flex-1">
           <Home settings={settings} homePage={homePage} />
-          <About />
+          <About homePage={homePage} />
         </main>
         <Footer settings={settings} />
       </div>

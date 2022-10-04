@@ -45,7 +45,7 @@ export default function Home({ settings, homePage }) {
             <img
               alt={profilePicAlt}
               src={urlFor(profilePic)}
-              className="w-48 h-48"
+              className="w-48 h-48 bg-gradient-to-tr from-secondary-400 to-transparent"
             />
           </div>
         </motion.div>

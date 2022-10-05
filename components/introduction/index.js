@@ -14,7 +14,7 @@ export default function Introduction({ homePage }) {
   );
 
   return (
-    <div className="pt-7 mb-3 lg:pt-14 flex flex-col lg:flex-row w-full justify-center items-center gap-7  overflow-hidden margin-auto  ">
+    <div className="mb-3 lg:pt-14 flex flex-col lg:flex-row w-full justify-center items-center gap-7  overflow-hidden margin-auto  ">
       <motion.div
         whileInView={{ opacity: [0, 0.5, 1], x: [-200, 50, 0] }}
         viewport={{ once: true }}

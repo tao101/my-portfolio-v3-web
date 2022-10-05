@@ -13,6 +13,7 @@ import MobileMenu from '../components/mobileMenu.js';
 import Home from '../components/home';
 import About from '../components/about';
 import Skills from '../components/skills';
+import Services from '../components/services';
 
 export default function Index({ settings, homePage }) {
   let seoTitle =
@@ -52,10 +53,11 @@ export default function Index({ settings, homePage }) {
 
       <div className="flex flex-col min-h-screen w-screen max-w-screen-xl mx-auto ">
         <Header settings={settings} />
-        <main className="px-2 bg-white-100 flex-1">
+        <main className="px-2 bg-white-100 flex-1 mx-2">
           <Home settings={settings} homePage={homePage} />
           <About homePage={homePage} />
           <Skills homePage={homePage} />
+          <Services homePage={homePage} />
         </main>
         <Footer settings={settings} />
       </div>

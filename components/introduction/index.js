@@ -90,7 +90,7 @@ export default function Introduction({ homePage }) {
         </div>
         <img
           className="lg:object-cover w-full "
-          src={urlFor(aboutImage)}
+          src={urlFor(aboutImage).width(594).height(432)}
           alt={aboutImageAlt}
         />
       </motion.div>

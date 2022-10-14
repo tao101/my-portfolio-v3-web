@@ -9,6 +9,12 @@ export default function SkillBox({ title, percentage }) {
       transition={{
         duration: 0.1,
       }}
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
       className="flex flex-col w-full  md:w-2/5  lg:flex-1 justify-center items-center circleprogress card hovercard relative p-4 text-center md:p-5  "
     >
       <div className="relative mb-2 inline-block text-secondary-400">

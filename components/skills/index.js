@@ -21,7 +21,7 @@ export default function Skills({ homePage }) {
       className=" mb-3 mt-12 z-20 flex flex-col   justify-center items-center"
     >
       <SectionTitle title={title} subTitle={subtitle} />
-      <div className="flex-1 flex flex-col w-full gap-7">
+      <div className="flex-1 flex flex-col w-full gap-7 pt-2 lg:pt-14">
         <div className="flex gap-7 max-w-screen flex-wrap justify-center">
           <SkillBox title={firstSkillTitle} percentage={firstSkillPercentage} />
           <SkillBox

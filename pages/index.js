@@ -14,6 +14,7 @@ import Home from '../components/home';
 import About from '../components/about';
 import Skills from '../components/skills';
 import Services from '../components/services';
+import Resume from '../components/resume';
 
 export default function Index({ settings, homePage }) {
   let seoTitle =
@@ -58,6 +59,7 @@ export default function Index({ settings, homePage }) {
           <About homePage={homePage} />
           <Skills homePage={homePage} />
           <Services homePage={homePage} />
+          <Resume homePage={homePage} />
         </main>
         <Footer settings={settings} />
       </div>

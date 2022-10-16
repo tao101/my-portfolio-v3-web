@@ -38,6 +38,20 @@ module.exports = {
       fontFamily: {
         radioCanada: ['"Radio Canada"', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        serviceIcon: 'serviceIcon .5s cubic-bezier(0.4, 0, 0.6, 1)',
+      },
+      keyframes: {
+        serviceIcon: {
+          '0%': {
+            opacity: 0,
+            transform: 'scale(3)',
+          },
+          '100%': {
+            opacity: 1,
+          },
+        },
+      },
     },
   },
   plugins: [],

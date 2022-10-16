@@ -17,7 +17,10 @@ export default function EducationalQualification({ homePage }) {
       <div>
         {educationalQualifications?.map((educationalQualification) => {
           return (
-            <div className="relative block items-start rounded-full border-white border-opacity-20 first:mt-0 md:flex">
+            <div
+              key={educationalQualification?._key}
+              className="relative block items-start rounded-full border-white border-opacity-20 first:mt-0 md:flex"
+            >
               <span className="absolute top-0 text-[#bfbecb] left-12 mt-7 mr-12 min-w-[115px] rounded-full bg-secondary-400 bg-opacity-10 p-1 text-center text-sm leading-none md:relative md:left-0">
                 {educationalQualification?.year}
               </span>

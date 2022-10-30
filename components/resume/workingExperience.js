@@ -20,7 +20,7 @@ export default function WorkingExperience({ homePage }) {
 
         {title}
       </h4>
-      <div>
+      <div className="pl-2.5 md:pl-0 ">
         {workingExperiences?.map((workingExperience) => {
           return (
             <div

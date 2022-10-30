@@ -88,7 +88,7 @@ export default function ServiceBox({ item, index }) {
         duration: 0.1,
         delay: 0,
       }}
-      className="relative group card hovercard circleprogress flex-1 h-full  items-stretch p-4 md:p-5  "
+      className="relative group card hovercard circleprogress flex-1  flex flex-col   items-stretch p-4 md:p-5  "
     >
       <span className="absolute right-0 top-0 p-4 md:p-5 text-5xl pointer-events-none z-0 font-bold uppercase text-heading opacity-5 text-white  ">
         0{index + 1}
@@ -99,7 +99,7 @@ export default function ServiceBox({ item, index }) {
       <h5 className="text-lg font-medium antialiased text-white mb-3">
         {serviceTitle}
       </h5>
-      <p className="text-[#bfbecb] antialiased text-base	font-normal	 ">
+      <p className="text-[#bfbecb] antialiased text-base	font-normal flex-1	 ">
         {serviceDescription}
       </p>
     </motion.div>

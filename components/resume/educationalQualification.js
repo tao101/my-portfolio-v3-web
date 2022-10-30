@@ -3,7 +3,7 @@ export default function EducationalQualification({ homePage }) {
   let educationalQualifications = homePage?.educationalQualifications;
   return (
     <div className="flex-1">
-      <h4 className="flex items-center gap-4 mb-3 font-semibold	antialiased text-2xl text-white ">
+      <h4 className=" flex items-center gap-4 mb-3 font-semibold	antialiased text-2xl text-white ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -14,7 +14,7 @@ export default function EducationalQualification({ homePage }) {
         </svg>
         {title}
       </h4>
-      <div>
+      <div className="pl-2.5 md:pl-0 ">
         {educationalQualifications?.map((educationalQualification) => {
           return (
             <div

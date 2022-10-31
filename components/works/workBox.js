@@ -152,6 +152,8 @@ export default function WorkBox({ item, index }) {
         <div className="absolute">
           <FsLightbox
             key={item?._id + '-FsLightbox-Gallery-' + index}
+            initialAnimation="scale-in-long"
+            slideChangeAnimation="scale-in"
             toggler={openPhotoGalarey}
             sources={photoGallery?.map((photo) => {
               return (

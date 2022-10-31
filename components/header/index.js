@@ -107,7 +107,7 @@ export default function Header({ settings }) {
               </Link>
             </li>
             <li className="mx-2">
-              <Link href="/">
+              <Link href="/#resume">
                 <a
                   onMouseEnter={() => setHoverdItem('RESUME')}
                   onMouseLeave={() => setHoverdItem('')}
@@ -136,7 +136,7 @@ export default function Header({ settings }) {
               </Link>
             </li>
             <li className="mx-2">
-              <Link href="/">
+              <Link href="/#works">
                 <a
                   onMouseEnter={() => setHoverdItem('WORKS')}
                   onMouseLeave={() => setHoverdItem('')}

@@ -6,7 +6,7 @@ export default function Works({ homePage, works }) {
   let numberOfItems = 6;
   if (typeof window != 'undefined') {
     let width = window?.innerWidth;
-    console.log('width', width);
+    //console.log('width', width);
     if (width <= 640) {
       numberOfItems = 3;
     }
@@ -19,7 +19,7 @@ export default function Works({ homePage, works }) {
   let selectedWorks = [];
   let visibleWorks = [];
 
-  console.log('wroks', works);
+  //console.log('wroks', works);
   works?.forEach((work) => {
     work?.Categories?.forEach((category) => {
       if (category?._id == selectedCategory) {
@@ -36,9 +36,9 @@ export default function Works({ homePage, works }) {
     selectedWorks = works;
   }
 
-  visibleWorks = selectedWorks.slice(0, visibleWorksLength);
+  visibleWorks = selectedWorks?.slice(0, visibleWorksLength);
 
-  console.log('categories ', categories);
+  //console.log('categories ', categories);
 
   return (
     <section
@@ -82,8 +82,10 @@ export default function Works({ homePage, works }) {
         })}
       </div>
       <div className="w-full flex-wrap flex flex-row justify-center gap-x-8 gap-y-8  lg:items-stretch pt-6 lg:pt-14">
-        {visibleWorks?.map((work) => {
-          return <WorkBox key={work?._id} item={work} />;
+        {visibleWorks?.map((work, index) => {
+          return (
+            <WorkBox key={work?._id + '-' + index} item={work} index={index} />
+          );
         })}
       </div>
 

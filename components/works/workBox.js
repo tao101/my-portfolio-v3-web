@@ -16,65 +16,6 @@ export default function WorkBox({ item, index }) {
 
   return (
     <>
-      {youtubeUrl && youtubeUrl != '' && (
-        <div className="absolute">
-          <FsLightbox
-            key={item?._id + '-FsLightbox-youtube-' + index}
-            toggler={openYoutubeVideo}
-            sources={[youtubeUrl]}
-          />
-        </div>
-      )}
-      {photoGallery && photoGallery?.length > 0 && (
-        <div className="absolute">
-          <FsLightbox
-            key={item?._id + '-FsLightbox-Gallery-' + index}
-            toggler={openPhotoGalarey}
-            sources={photoGallery?.map((photo) => {
-              return (
-                <motion.div
-                  key={photo?._key}
-                  className="w-fit h-fit flex  flex-col justify-center items-center bg-transparent "
-                  onClick={() => setOpenPhotoGalarey(false)}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.01,
-                    y: -100,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    scale: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 0.2,
-                    duration: 0.2,
-                  }}
-                >
-                  <div className="flex flex-col w-fit h-fit  justify-start items-center ">
-                    <img
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                      src={urlFor(photo?.image?.image)}
-                      alt={photo?.image?.alt}
-                      className=" w-[75vw] h-full  object-contain	"
-                    />
-                    <h5
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                      className="pt-8 w-full text-white text-3xl text-center font-medium"
-                    >
-                      {photo?.title}
-                    </h5>
-                  </div>
-                </motion.div>
-              );
-            })}
-          />
-        </div>
-      )}
       <AnimatePresence>
         <motion.div
           key={item?._id + '-' + index}
@@ -198,6 +139,65 @@ export default function WorkBox({ item, index }) {
           </p>
         </motion.div>
       </AnimatePresence>
+      {youtubeUrl && youtubeUrl != '' && (
+        <div className="absolute">
+          <FsLightbox
+            key={item?._id + '-FsLightbox-youtube-' + index}
+            toggler={openYoutubeVideo}
+            sources={[youtubeUrl]}
+          />
+        </div>
+      )}
+      {photoGallery && photoGallery?.length > 0 && (
+        <div className="absolute">
+          <FsLightbox
+            key={item?._id + '-FsLightbox-Gallery-' + index}
+            toggler={openPhotoGalarey}
+            sources={photoGallery?.map((photo) => {
+              return (
+                <motion.div
+                  key={photo?._key}
+                  className="w-fit h-fit flex  flex-col justify-center items-center bg-transparent "
+                  onClick={() => setOpenPhotoGalarey(false)}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.01,
+                    y: -100,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    delay: 0.2,
+                    duration: 0.2,
+                  }}
+                >
+                  <div className="flex flex-col w-fit h-fit  justify-start items-center ">
+                    <img
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                      src={urlFor(photo?.image?.image)}
+                      alt={photo?.image?.alt}
+                      className=" w-[75vw] h-full  object-contain	"
+                    />
+                    <h5
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                      className="pt-8 w-full text-white text-3xl text-center font-medium"
+                    >
+                      {photo?.title}
+                    </h5>
+                  </div>
+                </motion.div>
+              );
+            })}
+          />
+        </div>
+      )}
     </>
   );
 }

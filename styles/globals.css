@@ -96,3 +96,20 @@ a {
   stroke: #33ccff;
   opacity: 0.2;
 }
+
+.swiper-slide {
+  padding-top: 40px;
+  padding-bottom: 16px;
+}
+
+.swiper {
+  padding-bottom: 32px !important;
+}
+
+.swiper-pagination {
+}
+
+.swiper-pagination-bullet {
+  background-color: #33ccff !important;
+  margin-top: 32px;
+}

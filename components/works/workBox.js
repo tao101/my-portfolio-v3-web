@@ -12,8 +12,6 @@ export default function WorkBox({ item, index }) {
   let githubUrl = item?.githubUrl;
   let youtubeUrl = item?.youtubeUrl;
 
-  console.log('item', item);
-
   return (
     <>
       <AnimatePresence>

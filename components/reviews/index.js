@@ -2,7 +2,7 @@ import SectionTitle from '../sectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import ReviewItem from './reviewItem';
-import { Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useSwiper } from 'swiper/react';
@@ -70,6 +70,10 @@ export default function Reviews({ homePage }) {
             swiperRef.current = swiper;
           }}
           loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -84,7 +88,7 @@ export default function Reviews({ homePage }) {
               spaceBetween: 50,
             },
           }}
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={50}
           slidesPerView="auto"
           id="always-be-swipin"

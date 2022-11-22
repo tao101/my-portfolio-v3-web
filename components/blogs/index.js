@@ -2,7 +2,7 @@ import SectionTitle from '../sectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import BlogItem from './blogItem';
-import { Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useSwiper } from 'swiper/react';
@@ -69,6 +69,10 @@ export default function Blogs({ blogs }) {
             swiperRef.current = swiper;
           }}
           loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -83,7 +87,7 @@ export default function Blogs({ blogs }) {
               spaceBetween: 50,
             },
           }}
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={50}
           slidesPerView="auto"
           id="always-be-swipin"

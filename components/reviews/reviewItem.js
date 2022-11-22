@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Stars from '../../utils/reactStars';
+import ReactStars from 'react-stars';
 
 export default function ReviewItem({ review }) {
   let stars = {
@@ -24,7 +25,7 @@ export default function ReviewItem({ review }) {
       </div>
       <h5 className="text-white mt-6 ">{review?.title}</h5>
       <p className="mb-2 text-[#bfbecb]">{review?.subtitle}</p>
-      <div className="mb-2">
+      <div className="">
         <Stars {...stars} />
       </div>
       <p className="text-[#bfbecb]">{review?.description}</p>

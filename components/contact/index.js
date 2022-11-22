@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SectionTitle from '../sectionTitle';
+import { uid } from 'uid';
 
 export default function Contact({ settings }) {
   //console.log('categories ', categories);
@@ -12,10 +13,27 @@ export default function Contact({ settings }) {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     //todo: add logic for form submit
     console.log('onSubmit');
+
+    try {
+      let result = await fetch('/api/sendContact', {
+        method: 'POST',
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      });
+      result = await result.json();
+      console.log('result ', result);
+      if (result?.status) {
+      } else {
+      }
+    } catch (error) {}
   };
 
   return (
@@ -34,14 +52,14 @@ export default function Contact({ settings }) {
               {settings?.contactDescription}
             </p>
           </div>
-          <span class="inline-block h-1 w-20 rounded-full bg-secondary-400 bg-opacity-20"></span>
+          <span className="inline-block h-1 w-20 rounded-full bg-secondary-400 bg-opacity-20"></span>
           {contactPhones?.length > 0 && (
             <div className="my-3 card hovercard circleprogress p-4 md:p-5 flex ">
-              <span class="icon mr-4 inline-flex h-16 w-16 shrink-0 grow-0 basis-16 items-center justify-center rounded-full bg-secondary-400 bg-opacity-10 text-3xl text-secondary-400">
+              <span className="icon mr-4 inline-flex h-16 w-16 shrink-0 grow-0 basis-16 items-center justify-center rounded-full bg-secondary-400 bg-opacity-10 text-3xl text-secondary-400">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   viewBox="0 0 24 24"
                   height="1em"
                   width="1em"
@@ -50,14 +68,14 @@ export default function Contact({ settings }) {
                   <g>
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path
-                      fill-rule="nonzero"
+                      fillRule="nonzero"
                       d="M9.366 10.682a10.556 10.556 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296 11.422 11.422 0 0 0 4.583 1.364 1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995c-.53.055-1.064.082-1.602.082C9.94 21 3 14.06 3 5.5c0-.538.027-1.072.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.422 11.422 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294l-1.238.884zm-2.522-.657l1.9-1.357A13.41 13.41 0 0 1 7.647 5H5.01c-.006.166-.009.333-.009.5C5 12.956 11.044 19 18.5 19c.167 0 .334-.003.5-.01v-2.637a13.41 13.41 0 0 1-3.668-1.097l-1.357 1.9a12.442 12.442 0 0 1-1.588-.75l-.058-.033a12.556 12.556 0 0 1-4.702-4.702l-.033-.058a12.442 12.442 0 0 1-.75-1.588z"
                     ></path>
                   </g>
                 </svg>
               </span>
               <div>
-                <h5 class="mb-2 text-white font-medium text-lg">
+                <h5 className="mb-2 text-white font-medium text-lg">
                   Contact on phone
                 </h5>
                 {contactPhones?.map((phone) => {
@@ -68,7 +86,10 @@ export default function Contact({ settings }) {
                     '-' +
                     phone.substring(8, phone.length);
                   return (
-                    <p className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2">
+                    <p
+                      key={uid(32)}
+                      className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2"
+                    >
                       <a href={`tel:${phone}`}>{formatedPhone}</a>
                     </p>
                   );
@@ -78,11 +99,11 @@ export default function Contact({ settings }) {
           )}
           {contactEmails?.length > 0 && (
             <div className="my-3 card hovercard circleprogress p-4 md:p-5 flex ">
-              <span class="icon mr-4 inline-flex h-16 w-16 shrink-0 grow-0 basis-16 items-center justify-center rounded-full bg-secondary-400 bg-opacity-10 text-3xl text-secondary-400">
+              <span className="icon mr-4 inline-flex h-16 w-16 shrink-0 grow-0 basis-16 items-center justify-center rounded-full bg-secondary-400 bg-opacity-10 text-3xl text-secondary-400">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   viewBox="0 0 24 24"
                   height="1em"
                   width="1em"
@@ -95,12 +116,15 @@ export default function Contact({ settings }) {
                 </svg>
               </span>
               <div>
-                <h5 class="mb-2 text-white font-medium text-lg">
+                <h5 className="mb-2 text-white font-medium text-lg">
                   Contact on mail
                 </h5>
                 {contactEmails?.map((email) => {
                   return (
-                    <p className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2">
+                    <p
+                      key={uid(32)}
+                      className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2"
+                    >
                       <a href={`mailto:${email}`}>{email}</a>
                     </p>
                   );
@@ -110,11 +134,11 @@ export default function Contact({ settings }) {
           )}
           {contactAddress?.length > 0 && (
             <div className="my-3 card hovercard circleprogress p-4 md:p-5 flex  mb-0">
-              <span class="icon mr-4 inline-flex h-16 w-16 shrink-0 grow-0 basis-16 items-center justify-center rounded-full bg-secondary-400 bg-opacity-10 text-3xl text-secondary-400">
+              <span className="icon mr-4 inline-flex h-16 w-16 shrink-0 grow-0 basis-16 items-center justify-center rounded-full bg-secondary-400 bg-opacity-10 text-3xl text-secondary-400">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   viewBox="0 0 24 24"
                   height="1em"
                   width="1em"
@@ -127,12 +151,15 @@ export default function Contact({ settings }) {
                 </svg>
               </span>
               <div>
-                <h5 class="mb-2 text-white font-medium text-lg">
+                <h5 className="mb-2 text-white font-medium text-lg">
                   Contact address
                 </h5>
                 {contactAddress?.map((address) => {
                   return (
-                    <p className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2">
+                    <p
+                      key={uid(32)}
+                      className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2"
+                    >
                       {address}
                     </p>
                   );
@@ -166,6 +193,7 @@ export default function Contact({ settings }) {
                 type="email"
                 id="email"
                 name="email"
+                required
                 className="flex-1 px-4 py-2 bg-transparent h-2 text-base	 text-[#bfbecb] hover:border-secondary-400 focus:outline-none focus:ring focus:ring-secondary-400"
                 placeholder="Enter your email..."
               />
@@ -178,6 +206,7 @@ export default function Contact({ settings }) {
                 type="text"
                 id="subject"
                 name="subject"
+                required
                 className="flex-1 px-4 py-2 bg-transparent h-2 text-base text-[#bfbecb] hover:border-secondary-400 focus:outline-none focus:ring focus:ring-secondary-400"
                 placeholder="Enter your name..."
               />
@@ -190,6 +219,7 @@ export default function Contact({ settings }) {
                 type="text"
                 id="subject"
                 name="subject"
+                required
                 cols="1"
                 rows="5"
                 className="flex-1 px-4  py-2 bg-transparent h-2 text-base text-[#bfbecb] hover:border-secondary-400 focus:outline-none focus:ring focus:ring-secondary-400"

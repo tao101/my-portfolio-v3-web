@@ -17,8 +17,9 @@ import Services from '../components/services';
 import Resume from '../components/resume';
 import Works from '../components/works';
 import Reviews from '../components/reviews';
+import Blogs from '../components/blogs';
 
-export default function Index({ settings, homePage, works }) {
+export default function Index({ settings, homePage, works, blogs }) {
   let seoTitle =
     settings?.seo?.title ??
     'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
@@ -64,6 +65,7 @@ export default function Index({ settings, homePage, works }) {
           <Resume homePage={homePage} />
           <Works homePage={homePage} works={works} />
           <Reviews homePage={homePage} />
+          <Blogs blogs={blogs} />
         </main>
         <Footer settings={settings} />
       </div>
@@ -72,13 +74,14 @@ export default function Index({ settings, homePage, works }) {
 }
 
 export async function getStaticProps(context) {
-  const { websiteSettings, homePage, works } = await getIndexPage();
+  const { websiteSettings, homePage, works, blogs } = await getIndexPage();
 
   return {
     props: {
       settings: websiteSettings,
       homePage,
       works,
+      blogs,
     }, // will be passed to the page component as props
   };
 }

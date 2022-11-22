@@ -1,24 +1,23 @@
 import SectionTitle from '../sectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import ReviewItem from './reviewItem';
+import BlogItem from './blogItem';
 import { Navigation, Pagination } from 'swiper';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useSwiper } from 'swiper/react';
 import { useRef } from 'react';
 
-export default function Reviews({ homePage }) {
-  let reviews = homePage?.reviews;
+export default function Blogs({ blogs }) {
   const swiperRef = useRef(null);
 
   return (
     <section
-      id="reviews"
-      className="mb-3  mt-24 z-20 flex flex-col overflow-visible	  justify-center items-center "
+      id="blogs"
+      className="mb-3  mt-12 z-20 flex flex-col overflow-visible  justify-center items-center "
     >
-      <SectionTitle title="CLIENT REVIEWS" subTitle="REVIEWS" />
-      <div className="relative mb-12 xl:mb-0 w-full flex flex-co  lg:flex-row justify-between items-stretch overflow-visible	  gap-7 pt-2 lg:pt-4">
+      <SectionTitle title="LATEST BLOGS" subTitle="BLOGS" />
+      <div className="relative mb-12 xl:mb-0 w-full flex flex-co  lg:flex-row justify-between items-stretch overflow-visible gap-7 pt-2 lg:pt-4">
         <button
           className="bg-[#bfbecb] hover:scale-125 hover:bg-secondary-400 w-11 h-11 absolute right-[35%] xl:-right-16 -bottom-12 z-50 xl:top-[calc(50%_-_16px)] rounded-full flex justify-center items-center   "
           onClick={() => {
@@ -91,10 +90,10 @@ export default function Reviews({ homePage }) {
           className=""
           pagination={{ clickable: true }}
         >
-          {reviews?.map((item) => {
+          {blogs?.map((item) => {
             return (
-              <SwiperSlide className="" key={item?._key}>
-                <ReviewItem review={item} />
+              <SwiperSlide className="" key={item?._id}>
+                <BlogItem blog={item} />
               </SwiperSlide>
             );
           })}

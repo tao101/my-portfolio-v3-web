@@ -248,6 +248,11 @@
     "@types/react" "^17.0.42"
     "rxjs" "^6.5.3"
 
+"@smastrom/react-rating@^1.2.1":
+  "integrity" "sha512-euWOpS7M4dMijxDIDne7CZNMluEX4bw1dFZ2DdiffBj5GIQkJ64EoA2Ebj00nzwXJ6qsSzF1Y9h7smM7vfJcEA=="
+  "resolved" "https://registry.npmjs.org/@smastrom/react-rating/-/react-rating-1.2.1.tgz"
+  "version" "1.2.1"
+
 "@swc/helpers@0.4.11":
   "integrity" "sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw=="
   "resolved" "https://registry.npmjs.org/@swc/helpers/-/helpers-0.4.11.tgz"
@@ -2000,6 +2005,11 @@
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
+
+"react-stars@^2.2.5":
+  "integrity" "sha512-O//KS6Z9RZnUOU/r+3+wxCzNalVn/wEWIcbAQFRV3dw8WbV+ys/kgcpBPijqTiNpHGrcwZdtb/7wF/UVem20CQ=="
+  "resolved" "https://registry.npmjs.org/react-stars/-/react-stars-2.2.5.tgz"
+  "version" "2.2.5"
 
 "react-type-animation@^2.1.1":
   "integrity" "sha512-leXq9tZLsfbQWi+1PvsSc2XZYv9CqRrChvuv81M0UPECggBEQgplQzTO9LzgjYNPdnhf4UMeEtZMI4G1qPpuwA=="

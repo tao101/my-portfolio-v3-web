@@ -1651,6 +1651,11 @@
   "resolved" "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   "version" "1.4.0"
 
+"next-react-stars@^2.2.3":
+  "integrity" "sha512-soY+1mLPDk9gPVzbi4Tu3cDds6267Ks5DBwmpSCrsaXUknqWuZdtCDd0g4z7/sQ7/THFAasFq9i5Oqz5cvoG6Q=="
+  "resolved" "https://registry.npmjs.org/next-react-stars/-/next-react-stars-2.2.3.tgz"
+  "version" "2.2.3"
+
 "next-sanity@^0.8.4":
   "integrity" "sha512-3ZgW+1+X0Y2PPCqdt7RIKID4EyX9jqnn3lrHahqLW6N6C/8Up71TA0M+Ltq2vlLUSt9YkvqsTmHP5hgaOg2SWQ=="
   "resolved" "https://registry.npmjs.org/next-sanity/-/next-sanity-0.8.4.tgz"

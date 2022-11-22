@@ -1,15 +1,16 @@
 import { urlFor } from '../../lib/sanity';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Stars from '../../utils/reactStars';
-import ReactStars from 'react-stars';
+import dynamic from 'next/dynamic';
+
+const DynamicStars = dynamic(() => import('react-stars'), {
+  ssr: false,
+});
 
 export default function ReviewItem({ review }) {
   let stars = {
-    value: 4.5,
+    value: review?.stars,
     edit: false,
     size: 18,
   };
@@ -25,8 +26,8 @@ export default function ReviewItem({ review }) {
       </div>
       <h5 className="text-white mt-6 ">{review?.title}</h5>
       <p className="mb-2 text-[#bfbecb]">{review?.subtitle}</p>
-      <div className="">
-        <Stars {...stars} />
+      <div className="mb-2">
+        <DynamicStars {...stars} />
       </div>
       <p className="text-[#bfbecb]">{review?.description}</p>
     </div>

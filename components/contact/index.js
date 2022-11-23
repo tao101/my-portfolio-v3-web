@@ -52,7 +52,7 @@ export default function Contact({ settings }) {
               {settings?.contactDescription}
             </p>
           </div>
-          <span className="inline-block h-1 w-20 rounded-full bg-secondary-400 bg-opacity-20"></span>
+          <span className="inline-block h-1 w-20 my-2 rounded-full bg-secondary-400 bg-opacity-20"></span>
           {contactPhones?.length > 0 && (
             <div className="my-3 card hovercard circleprogress p-4 md:p-5 flex ">
               <span className="icon mr-4 inline-flex h-16 w-16 shrink-0 grow-0 basis-16 items-center justify-center rounded-full bg-secondary-400 bg-opacity-10 text-3xl text-secondary-400">

@@ -1,10 +1,12 @@
 import { NextSeo } from 'next-seo';
+import Link from 'next/link';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import { urlFor } from '../../lib/sanity';
 import { getIndexPage } from '../../lib/sanityHelpers';
 
-export default function Blog({ settings, homePage, works, blogs }) {
+export default function Blog({ settings, categories, categoriesCount, blogs }) {
+  console.log('categories ', categoriesCount);
   let seoTitle =
     settings?.seo?.title ??
     'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
@@ -68,7 +70,27 @@ export default function Blog({ settings, homePage, works, blogs }) {
           </div>
           <div className="flex gap-7 flex-col lg:flex-row  ">
             <div className="flex-[9_9_0%] bg-green-300 w-full h-12"></div>
-            <div className="flex-[3_3_0%] bg-red-300 w-full h-12"></div>
+            <div className="flex-[3_3_0%] card hovercard circleprogress p-4 md:p-5  w-full ">
+              <h5 className="border-b border-white border-opacity-20 pb-2 font-medium text-secondary-400 mb-3">
+                Categories
+              </h5>
+              <ul className="categories">
+                {categories?.map((category) => {
+                  return (
+                    <li className="mb-2   hover:cursor-pointer flex text-secondary-400  ">
+                      <Link href={'/blog/category/' + category?.slug?.current}>
+                        <div className="flex flex-1 justify-between items-center hover:text-secondary-400 text-[#bfbecb] mt-px ">
+                          <h6>{category?.title} </h6>
+                          <span>
+                            ({categoriesCount[category?.slug?.current]})
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </main>
       </div>
@@ -85,7 +107,15 @@ export async function getStaticProps(context) {
   let categories = [];
   blogs.forEach((blog) => {
     let blogCategories = blog?.Categories;
-    blogCategories.forEach((category) => {});
+    blogCategories.forEach((category) => {
+      let slug = category?.slug?.current;
+      if (!categoriesCount.hasOwnProperty(slug)) {
+        categoriesCount[slug] = 1;
+        categories.push(category);
+      } else {
+        categoriesCount[slug] = categoriesCount[slug] + 1;
+      }
+    });
     console.log('blog ', blog);
   });
 
@@ -93,6 +123,8 @@ export async function getStaticProps(context) {
     props: {
       settings: websiteSettings,
       blogs,
+      categories,
+      categoriesCount,
     }, // will be passed to the page component as props
   };
 }

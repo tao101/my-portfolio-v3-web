@@ -13,7 +13,7 @@ export default function Home({ settings, homePage }) {
     <>
       <section
         id="home"
-        className="h-screen z-20 flex flex-col   justify-center items-center"
+        className="relative h-screen z-20 flex flex-col   justify-center items-center"
       >
         <motion.div
           initial={{

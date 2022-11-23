@@ -8,15 +8,14 @@ import 'swiper/css';
 export default function BlogItem({ blog }) {
   return (
     <div className="relative group h-unset md:h-full  card hovercard circleprogress w-full  flex flex-col  items-stretch p-4 md:p-5">
-      <div className="absolute bg-secondary-400 rounded "></div>
       <Link href={'/blog/post/' + blog?.slug?.current}>
-        <div className="flex-1 rounded-lg overflow-hidden ">
+        <a className="flex-1 rounded-lg overflow-hidden ">
           <img
             className=" hover:scale-125 ease-in duration-500 hover:cursor-pointer"
             src={urlFor(blog?.image?.image)}
             alt={blog?.image?.alt}
           />
-        </div>
+        </a>
       </Link>
 
       <Link href={'/blog/post/' + blog?.slug?.current}>

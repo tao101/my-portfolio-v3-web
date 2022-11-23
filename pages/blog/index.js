@@ -39,17 +39,55 @@ export default function Blog({ settings, homePage, works, blogs }) {
           ],
         }}
       />
-      <div className="flex flex-col min-h-screen w-screen max-w-screen-xl mx-auto ">
-        <Header settings={settings} />
-        <main className="px-2 bg-white-100 flex-1 mx-2"></main>
-        <Footer settings={settings} />
+      <div className="realative  w-full h-64 breadcrumb-bg">
+        <div className="w-screen max-w-screen-xl mx-auto">
+          <Header settings={settings} />
+        </div>
+
+        <div className="relative flex justify-center items-center h-full w-full">
+          <div
+            className="absolute  flex justify-center items-center h-full w-full pt-20 herosection-bg"
+            style={{
+              background: 'url("/herosection-bg.png")',
+              opacity: 0.5,
+            }}
+          ></div>
+          <h1 className="capitalize text-secondary-400 antialiased font-bold text-4xl	pt-20">
+            Blogs
+          </h1>
+        </div>
       </div>
+      <div className="relative flex flex-col min-h-screen w-screen max-w-screen-xl mx-auto ">
+        <main className=" px-2 bg-white-100 flex-1 pt-28 mx-2">
+          <div className="absolute top-0 flex h-[100%] z-0	 w-full justify-around">
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+          </div>
+          <div className="flex gap-7 flex-col lg:flex-row  ">
+            <div className="flex-[9_9_0%] bg-green-300 w-full h-12"></div>
+            <div className="flex-[3_3_0%] bg-red-300 w-full h-12"></div>
+          </div>
+        </main>
+      </div>
+
+      <Footer settings={settings} />
     </>
   );
 }
 
 export async function getStaticProps(context) {
   const { websiteSettings, blogs } = await getIndexPage();
+
+  let categoriesCount = {};
+  let categories = [];
+  blogs.forEach((blog) => {
+    let blogCategories = blog?.Categories;
+    blogCategories.forEach((category) => {});
+    console.log('blog ', blog);
+  });
 
   return {
     props: {

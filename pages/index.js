@@ -55,10 +55,16 @@ export default function Index({ settings, homePage, works, blogs }) {
           ],
         }}
       />
-
-      <div className="flex flex-col min-h-screen w-screen max-w-screen-xl mx-auto ">
+      <div className="flex flex-col z-20 min-h-screen w-screen max-w-screen-xl mx-auto ">
         <Header settings={settings} />
-        <main className="px-2 bg-white-100 flex-1 mx-2">
+        <main className="relative px-2 bg-white-100 flex-1 mx-2">
+          <div className="absolute flex h-full z-0	 w-full justify-around">
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+            <span className="border-r border-white border-opacity-5"></span>
+          </div>
           <Home settings={settings} homePage={homePage} />
           <About homePage={homePage} />
           <Skills homePage={homePage} />

@@ -11,17 +11,10 @@ export default function Home({ settings, homePage }) {
   //console.log('description ', description);
   return (
     <>
-      <div
+      <section
         id="home"
-        className=" absolute left-0 top-0 flex h-screen z-10	 w-full justify-around"
+        className="h-screen z-20 flex flex-col   justify-center items-center"
       >
-        <span className="border-r border-white border-opacity-5"></span>
-        <span className="border-r border-white border-opacity-5"></span>
-        <span className="border-r border-white border-opacity-5"></span>
-        <span className="border-r border-white border-opacity-5"></span>
-        <span className="border-r border-white border-opacity-5"></span>
-      </div>
-      <section className="h-screen z-20 flex flex-col   justify-center items-center">
         <motion.div
           initial={{
             opacity: 0,

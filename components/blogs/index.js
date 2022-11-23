@@ -94,7 +94,7 @@ export default function Blogs({ blogs }) {
           className=""
           pagination={{ clickable: true }}
         >
-          {blogs?.map((item) => {
+          {blogs?.slice(0, 10).map((item) => {
             return (
               <SwiperSlide className="" key={item?._id}>
                 <BlogItem blog={item} />

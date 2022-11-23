@@ -158,3 +158,9 @@ textarea {
   margin: 0;
   padding: 0;
 }
+
+.herosection-bg {
+  background-repeat: repeat;
+  background-size: initial;
+  background-position: 0 13px;
+}

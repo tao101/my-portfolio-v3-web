@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { uid } from 'uid';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
-import { urlFor } from '../../../lib/sanity';
+import { getBlockContent, urlFor } from '../../../lib/sanity';
 import {
   getBlogBySlug,
   getBlogs,
@@ -11,6 +11,8 @@ import {
 } from '../../../lib/sanityHelpers';
 
 export default function Post({ settings, slug, blog }) {
+  console.log('blog', blog);
+
   let seoTitle =
     settings?.seo?.title ??
     'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
@@ -65,7 +67,7 @@ export default function Post({ settings, slug, blog }) {
       </div>
       <div className="relative flex flex-col min-h-screen w-screen max-w-screen-xl mx-auto ">
         <main className=" px-2 bg-white-100 z-0 flex-1 py-28 mx-2">
-          <div className="absolute top-0 flex h-[100%] z-0	 w-full justify-around">
+          <div className="absolute top-0 flex h-[100%] -z-10	 w-full justify-around">
             <span className="border-r border-white border-opacity-5"></span>
             <span className="border-r border-white border-opacity-5"></span>
             <span className="border-r border-white border-opacity-5"></span>
@@ -109,6 +111,7 @@ export default function Post({ settings, slug, blog }) {
                 </div>
               </div>
             </div>
+            <div className="">{getBlockContent(blog?.Content)}</div>
           </div>
         </main>
       </div>

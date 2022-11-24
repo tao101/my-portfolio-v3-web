@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
+import { uid } from 'uid';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
 import { urlFor } from '../../../lib/sanity';
@@ -85,7 +86,10 @@ export default function Post({ settings, slug, blog }) {
                 <div className="ml-2 flex z-20 gap-1.5">
                   {blog?.Categories?.map((category) => {
                     return (
-                      <span className="after:content-[','] last:after:hidden text-[#bfbecb] hover:text-secondary-400">
+                      <span
+                        key={uid()}
+                        className="after:content-[','] last:after:hidden text-[#bfbecb] hover:text-secondary-400"
+                      >
                         <Link
                           href={'/blog/category/' + category?.slug?.current}
                         >

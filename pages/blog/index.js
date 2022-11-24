@@ -11,9 +11,6 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
   const [index, setIndex] = useState(0);
   const [postPerPage, setPostPerPage] = useState(6);
 
-  console.log('blogs ', blogs.length);
-  console.log('index ', index);
-
   let visibleBlogs = blogs.slice(index, index + postPerPage);
 
   let seoTitle =
@@ -172,8 +169,7 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
 export async function getStaticProps(context) {
   let { websiteSettings, blogs } = await getIndexPage();
 
-  let reversedblog = blogs.concat([]);
-  reversedblog.reverse();
+ 
 
   let categoriesCount = {};
   let categories = [];

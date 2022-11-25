@@ -11,7 +11,7 @@ import {
 } from '../../../lib/sanityHelpers';
 
 export default function Post({ settings, slug, blog }) {
-  console.log('blog', blog);
+  //console.log('blog', blog);
 
   let seoTitle =
     settings?.seo?.title ??
@@ -60,7 +60,7 @@ export default function Post({ settings, slug, blog }) {
               opacity: 0.5,
             }}
           ></div>
-          <h1 className="capitalize flex mb-2 text-secondary-400 antialiased font-bold text-4xl	pt-20">
+          <h1 className="mx-2 capitalize flex mb-2 text-secondary-400 antialiased font-bold text-4xl	pt-20">
             {blog?.title}
           </h1>
         </div>

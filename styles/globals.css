@@ -191,8 +191,6 @@ textarea {
 }
 
 .post-body pre {
-  
- 
 }
 
 .post-body ul li::before {
@@ -243,4 +241,12 @@ textarea {
 
 .post-body strong {
   font-weight: bolde;
+}
+
+.post-body blockquote > p::before {
+  content: open-quote;
+}
+
+.post-body blockquote > p::after {
+  content: close-quote;
 }

@@ -10,6 +10,7 @@ import {
   getBlogs,
   getIndexPage,
 } from '../../../lib/sanityHelpers';
+import timeSince from '../../../utils/timeSince';
 
 export default function Post({ settings, slug, blog, publishedComments }) {
   //console.log('blog', blog);
@@ -118,8 +119,8 @@ export default function Post({ settings, slug, blog, publishedComments }) {
               </div>
             </div>
             <div className="">{getBlockContent(blog?.Content)}</div>
-            <div className="relative border-b pb-2 border-opacity-20 border-bg-[#bfbecb]/20">
-              <span className="border-b-8 pb-2 text-[#bfbecb]">
+            <div className="relative border-b pb-2 border-opacity-20 border-[#bfbecb]/20">
+              <span className="border-b-8 pb-2 text-[#bfbecb] border-[#bfbecb]/90">
                 {publishedComments?.length + ' '}{' '}
                 {publishedComments?.length >= 2 ? 'Comments' : 'Comment'}
               </span>
@@ -187,11 +188,12 @@ export default function Post({ settings, slug, blog, publishedComments }) {
               )}
             </div>
             {publishedComments?.length > 0 && (
-              <div className="mt-6 card hovercard circleprogress w-full p-4 md:p-5">
+              <div className="mt-6 card hovercard circleprogress w-full p-4 md:p-5 divide-y divide-secondary-100/20 ">
                 {publishedComments?.map((comment) => {
-                  console.log('commnet', comment.name);
+                  console.log('commnet', comment);
+                  let timeAgo = timeSince(new Date(comment?.date));
                   return (
-                    <div key={uid()} className="flex gap-x-6 mb-8  ">
+                    <div key={uid()} className="flex gap-x-6 py-4  ">
                       <div className="text-secondary-400">
                         <svg
                           version="1.1"
@@ -224,13 +226,17 @@ export default function Post({ settings, slug, blog, publishedComments }) {
                       </div>
                       <div className="flex-1">
                         <div className="flex gap-1">
-                          <p className="text-[#bfbecb]">{comment.name}</p>
+                          <p className="text-[#bfbecb]">{comment?.name}</p>
                           <span
                             className="bullet time-ago-bullet text-[#bfbecb]"
                             ariaHidden="true"
                           >
                             •
                           </span>
+                          <p className="text-[#bfbecb]">{`${timeAgo} ago`}</p>
+                        </div>
+                        <div>
+                          <p className="text-white">{comment?.comment}</p>
                         </div>
                       </div>
                     </div>
@@ -275,6 +281,10 @@ export async function getStaticProps(context) {
   if (!publishedComments) {
     publishedComments = [];
   }
+
+  publishedComments = publishedComments.sort(
+    (a, b) => new Date(b?.date).getTime() - new Date(a?.date).getTime()
+  );
   //console.log('blog', blog);
 
   return {

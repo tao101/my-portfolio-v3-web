@@ -208,7 +208,7 @@ export default function Contact({ settings }) {
                 name="subject"
                 required
                 className="flex-1 px-4 py-2 bg-transparent h-2 text-base text-[#bfbecb] hover:border-secondary-400 focus:outline-none focus:ring focus:ring-secondary-400"
-                placeholder="Enter your name..."
+                placeholder="Enter  subject..."
               />
             </div>
             <div className="flex flex-1  flex-col w-full text-white text-sm	antialiased ">
@@ -223,7 +223,7 @@ export default function Contact({ settings }) {
                 cols="1"
                 rows="5"
                 className="flex-1 px-4  py-2 bg-transparent h-2 text-base text-[#bfbecb] hover:border-secondary-400 focus:outline-none focus:ring focus:ring-secondary-400"
-                placeholder="Enter your name..."
+                placeholder="Enter your message..."
               />
             </div>
             <button

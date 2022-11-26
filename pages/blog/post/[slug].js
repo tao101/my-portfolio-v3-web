@@ -272,6 +272,9 @@ export async function getStaticProps(context) {
     return comment?.approved;
   });
 
+  if (!publishedComments) {
+    publishedComments = null;
+  }
   //console.log('blog', blog);
 
   return {
@@ -279,7 +282,7 @@ export async function getStaticProps(context) {
       settings: websiteSettings,
       slug,
       blog,
-      publishedComments,
+      publishedComments: publishedComments,
     },
   };
 }

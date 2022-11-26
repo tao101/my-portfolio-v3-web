@@ -273,7 +273,7 @@ export async function getStaticProps(context) {
   });
 
   if (!publishedComments) {
-    publishedComments = null;
+    publishedComments = [];
   }
   //console.log('blog', blog);
 

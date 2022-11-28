@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import AppContext from '../../lib/appContext';
 import { motion } from 'framer-motion';
 
-export default function MobileMenu() {
+export default function MobileMenu({}) {
   const { mobileMenuVisibility, setMobileMenuVisibility } =
     useContext(AppContext);
 
@@ -45,43 +45,43 @@ export default function MobileMenu() {
       </div>
       <div className="p-2  h-80  grow ">
         <motion.ul className="pb-[34px] flex flex-col justify-center items-center h-full	">
-          <li>
+          <li onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/">
               <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
                 Home
               </a>
             </Link>
           </li>
-          <li>
-            <Link href="/">
+          <li onClick={() => setMobileMenuVisibility(false)}>
+            <Link href="/#about">
               <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
                 About
               </a>
             </Link>
           </li>
-          <li>
-            <Link href="/">
+          <li onClick={() => setMobileMenuVisibility(false)}>
+            <Link href="/#resume">
               <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
                 RESUME
               </a>
             </Link>
           </li>
-          <li>
-            <Link href="/">
+          <li onClick={() => setMobileMenuVisibility(false)}>
+            <Link href="/#works">
               <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
                 WORKS
               </a>
             </Link>
           </li>
-          <li>
-            <Link href="/">
+          <li onClick={() => setMobileMenuVisibility(false)}>
+            <Link href="/blog">
               <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
                 BLOG
               </a>
             </Link>
           </li>
-          <li>
-            <Link href="/">
+          <li onClick={() => setMobileMenuVisibility(false)}>
+            <Link href="/#contact">
               <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
                 CONTACT
               </a>

@@ -3,6 +3,7 @@ import AppContext from '../../lib/appContext';
 import MobileMenu from '../mobileMenu.js';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Header({ settings }) {
   const { mobileMenuVisibility, setMobileMenuVisibility } =
@@ -12,6 +13,21 @@ export default function Header({ settings }) {
   let logo = settings?.logo?.image;
   let title = settings?.logo?.alt;
   //console.log('settings', settings);
+  const router = useRouter();
+  let path = router.asPath;
+  console.log('router', path);
+  let currentPath = '';
+  if (path.includes('blog')) {
+    currentPath = 'blog';
+  } else if (path.includes('#about')) {
+    currentPath = 'about';
+  } else if (path.includes('#resume')) {
+    currentPath = 'resume';
+  } else if (path.includes('#works')) {
+    currentPath = 'works';
+  } else if (path.includes('#contact')) {
+    currentPath = 'contact';
+  }
   return (
     <>
       <AnimatePresence>
@@ -53,7 +69,9 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('Home')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-secondary-400 hover:text-secondary-400 overflow-hidden"
+                  className={`group mt-1.5	relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary ${
+                    currentPath == '' ? 'text-secondary-400' : 'text-white'
+                  } hover:text-secondary-400 overflow-hidden`}
                 >
                   Home
                   <AnimatePresence>
@@ -82,7 +100,9 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('About')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className={`group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary ${
+                    currentPath == 'about' ? 'text-secondary-400' : 'text-white'
+                  }  hover:text-secondary-400 overflow-hidden`}
                 >
                   About
                   <AnimatePresence>
@@ -111,7 +131,11 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('RESUME')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className={`group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary ${
+                    currentPath == 'resume'
+                      ? 'text-secondary-400'
+                      : 'text-white'
+                  } hover:text-secondary-400 overflow-hidden`}
                 >
                   RESUME
                   <AnimatePresence>
@@ -140,7 +164,9 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('WORKS')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className={`group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary ${
+                    currentPath == 'works' ? 'text-secondary-400' : 'text-white'
+                  } hover:text-secondary-400 overflow-hidden`}
                 >
                   WORKS
                   <AnimatePresence>
@@ -169,7 +195,9 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('BLOG')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className={`group mt-1.5 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary ${
+                    currentPath == 'blog' ? 'text-secondary-400' : 'text-white'
+                  } hover:text-secondary-400 overflow-hidden`}
                 >
                   BLOG
                   <AnimatePresence>
@@ -198,7 +226,11 @@ export default function Header({ settings }) {
                 <a
                   onMouseEnter={() => setHoverdItem('CONTACT')}
                   onMouseLeave={() => setHoverdItem('')}
-                  className="group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400 overflow-hidden"
+                  className={`group mt-1.5	 relative inline-block cursor-pointer py-2 text-base uppercase tracking-wider text-heading before:text-primary ${
+                    currentPath == '#contact'
+                      ? 'text-secondary-400'
+                      : 'text-white'
+                  } hover:text-secondary-400 overflow-hidden`}
                 >
                   CONTACT
                   <AnimatePresence>

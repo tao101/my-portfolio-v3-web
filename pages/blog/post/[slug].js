@@ -19,6 +19,23 @@ export default function Post({ settings, slug, blog, publishedComments }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [addComment, setAddComment] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const onPostComment = async (e) => {
+    e.preventDefault();
+    try {
+      let result = await fetch('/api/addComment', {
+        method: 'POST',
+        body: JSON.stringify({
+          id: blog?._id,
+          name,
+          comment,
+          email,
+        }),
+      });
+      result = await result.json();
+    } catch (error) {}
+  };
 
   let seoTitle =
     settings?.seo?.title ??
@@ -127,7 +144,10 @@ export default function Post({ settings, slug, blog, publishedComments }) {
             </div>
             <div className="mt-6 card hovercard circleprogress w-full p-4 md:p-5">
               {addComment && (
-                <form className="w-full h-full flex flex-col justify-between  space-y-4">
+                <form
+                  onSubmit={onPostComment}
+                  className="w-full h-full flex flex-col justify-between  space-y-4"
+                >
                   <div className="flex flex-col w-full text-white text-sm	antialiased ">
                     <label className="mb-1.5">Name</label>
                     <input
@@ -135,6 +155,7 @@ export default function Post({ settings, slug, blog, publishedComments }) {
                       onChange={(e) => setName(e.target.value)}
                       type="text"
                       id="name"
+                      required
                       name="name"
                       className="flex-1 px-4 py-2 bg-transparent h-2 text-base text-[#bfbecb] hover:border-secondary-400 active:border-secondary-400 focus:outline-none focus:ring focus:ring-secondary-400"
                       placeholder="Enter your name..."
@@ -229,7 +250,7 @@ export default function Post({ settings, slug, blog, publishedComments }) {
                           <p className="text-[#bfbecb]">{comment?.name}</p>
                           <span
                             className="bullet time-ago-bullet text-[#bfbecb]"
-                            ariaHidden="true"
+                            aria-hidden="true"
                           >
                             •
                           </span>

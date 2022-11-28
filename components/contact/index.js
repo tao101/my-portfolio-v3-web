@@ -180,6 +180,7 @@ export default function Contact({ settings }) {
                 onChange={(e) => setName(e.target.value)}
                 type="text"
                 id="name"
+                required
                 name="name"
                 className="flex-1 px-4 py-2 bg-transparent h-2 text-base text-[#bfbecb] hover:border-secondary-400 active:border-secondary-400 focus:outline-none focus:ring focus:ring-secondary-400"
                 placeholder="Enter your name..."

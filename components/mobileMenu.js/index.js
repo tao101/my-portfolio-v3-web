@@ -2,12 +2,29 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import AppContext from '../../lib/appContext';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 export default function MobileMenu({}) {
   const { mobileMenuVisibility, setMobileMenuVisibility } =
     useContext(AppContext);
 
   const animationVariants = {};
+
+  const router = useRouter();
+  let path = router.asPath;
+  console.log('router', path);
+  let currentPath = '';
+  if (path.includes('blog')) {
+    currentPath = 'blog';
+  } else if (path.includes('#about')) {
+    currentPath = 'about';
+  } else if (path.includes('#resume')) {
+    currentPath = 'resume';
+  } else if (path.includes('#works')) {
+    currentPath = 'works';
+  } else if (path.includes('#contact')) {
+    currentPath = 'contact';
+  }
 
   return (
     <motion.div
@@ -47,48 +64,72 @@ export default function MobileMenu({}) {
         <motion.ul className="pb-[34px] flex flex-col justify-center items-center h-full	">
           <li onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/">
-              <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
+              <a
+                className={`${
+                  currentPath == '' ? 'text-secondary-400' : 'text-white'
+                } group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary hover:text-secondary-400`}
+              >
                 Home
               </a>
             </Link>
           </li>
           <li onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/#about">
-              <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
+              <a
+                className={` ${
+                  currentPath == 'about' ? 'text-secondary-400' : 'text-white'
+                } group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary  hover:text-secondary-400`}
+              >
                 About
               </a>
             </Link>
           </li>
           <li onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/#resume">
-              <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
+              <a
+                className={`${
+                  currentPath == 'resume' ? 'text-secondary-400' : 'text-white'
+                } group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary hover:text-secondary-400`}
+              >
                 RESUME
               </a>
             </Link>
           </li>
           <li onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/#works">
-              <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
+              <a
+                className={`${
+                  currentPath == 'works' ? 'text-secondary-400' : 'text-white'
+                } group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary hover:text-secondary-400`}
+              >
                 WORKS
               </a>
             </Link>
           </li>
           <li onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/blog">
-              <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
+              <a
+                className={`${
+                  currentPath == 'blog' ? 'text-secondary-400' : 'text-white'
+                } group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary hover:text-secondary-400`}
+              >
                 BLOG
               </a>
             </Link>
           </li>
           <li onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/#contact">
-              <a className="group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary text-white hover:text-secondary-400">
+              <a
+                className={`${
+                  currentPath == 'contact' ? 'text-secondary-400' : 'text-white'
+                } group relative inline-block cursor-pointer py-2 text-lg uppercase tracking-wider text-heading before:text-primary hover:text-secondary-400`}
+              >
                 CONTACT
               </a>
             </Link>
           </li>
           <li className="mt-8">
-            <Link href="/">
+            <Link href="/#contact">
               <a className="group text-main-900 bg-secondary-400 py-3 px-4  rounded-md cursor-pointer hover:text-black hover:bg-white hover:transition-colors duration-500 ">
                 HIRE ME
               </a>

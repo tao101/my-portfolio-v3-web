@@ -71,27 +71,27 @@ export default function Post({ settings, slug, blog, publishedComments }) {
           ],
         }}
       />
-      <div className="realative  w-full h-64 breadcrumb-bg">
+      <div className="realative  w-full h-64 ">
         <div className="w-screen max-w-screen-xl mx-auto">
           <Header settings={settings} />
         </div>
 
-        <div className="relative flex flex-col justify-center items-center h-full w-full">
+        <div className="relative flex flex-col justify-center items-center h-full  w-full">
           <div
-            className="absolute  flex justify-center items-center h-full w-full pt-20 herosection-bg"
+            className="absolute  flex justify-center items-center h-full w-full pt-20  "
             style={{
               background: 'url("/herosection-bg.png")',
               opacity: 0.5,
             }}
           ></div>
-          <h1 className="mx-2 capitalize flex mb-2 text-secondary-400 antialiased font-bold text-4xl	pt-20">
+          <h1 className="px-2 capitalize flex mb-2 text-secondary-400 antialiased font-bold text-4xl	pt-20">
             {blog?.title}
           </h1>
         </div>
       </div>
       <div className="relative flex flex-col min-h-screen w-screen max-w-screen-xl mx-auto ">
-        <main className=" px-2 bg-white-100 z-0 flex-1 py-28 mx-2">
-          <div className="absolute top-0 flex h-[100%] -z-10	 w-full justify-around">
+        <main className="relative w-full px-2 bg-white-100 z-0 flex-1  py-28 mx-2">
+          <div className="absolute top-0 left-0 flex h-[100%] -z-10 mx-auto w-full justify-around">
             <span className="border-r border-white border-opacity-5"></span>
             <span className="border-r border-white border-opacity-5"></span>
             <span className="border-r border-white border-opacity-5"></span>
@@ -106,7 +106,7 @@ export default function Post({ settings, slug, blog, publishedComments }) {
                 alt={blog?.image?.alt}
               />
             )}
-            <div className="mb-5 flex justify-between">
+            <div className="mb-5 flex flex-col md:flex-row  justify-between">
               <div className="flex items-center">
                 <h6 className="text-white">Category :</h6>
                 <div className="ml-2 flex z-20 gap-1.5">

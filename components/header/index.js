@@ -46,14 +46,12 @@ export default function Header({ settings }) {
   let homeHeaderClass = 'header p-3 top-0 left-0 z-30 h-20 absolute w-screen  ';
 
   let scrollHeaderClass =
-    'header  p-3  just top-0 left-0 z-50 h-20 w-screen   fixed border-b border-white border-opacity-20 bg-grey bg-opacity-80 backdrop-blur backdrop-filter';
+    'header  p-3  just top-0 left-0 z-40 h-20 w-screen   fixed border-b border-white border-opacity-20 bg-grey bg-opacity-80 backdrop-blur backdrop-filter';
 
   return (
     <>
       <AnimatePresence>
-        {mobileMenuVisibility && (
-          <MobileMenu  />
-        )}
+        {mobileMenuVisibility && <MobileMenu />}
       </AnimatePresence>
       <AnimatePresence>
         {(scrollY <= 180 || scrollY >= 200) && (

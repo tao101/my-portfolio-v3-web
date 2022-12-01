@@ -7,7 +7,7 @@ export default function Footer({ settings }) {
         <div className="flex flex-col my-4 xl:flex-row justify-between items-center gap-4   h-full w-full max-w-screen-xl mx-auto">
           <SocialIcons settings={settings} />
 
-          <p className="flex gap-2 items-center text-sm md:text-base lg:text-lg text-[#bfbecb] h-[24px] ">
+          <p className="flex  gap-2 items-center text-[11px] sm:text-sm md:text-base lg:text-lg text-[#bfbecb] h-[24px] ">
             Built with{' '}
             <a
               rel="noreferrer"
@@ -16,11 +16,10 @@ export default function Footer({ settings }) {
               className="text-white"
             >
               <svg
-                height="30px"
                 viewBox="0 0 207 124"
                 version="1.1"
                 fill="#FFFFFF"
-                className="text-white"
+                className="text-white h-[20px] sm:h-[30px]"
               >
                 <defs></defs>
                 <g id="Page-1" stroke="none" strokeWidth="1" fill="#FFFFFF">

@@ -9,7 +9,12 @@ export default function Footer({ settings }) {
 
           <p className="flex gap-2 items-center text-sm md:text-base lg:text-lg text-[#bfbecb] h-[24px] ">
             Built with{' '}
-            <a target="_blank" href="https://nextjs.org" className="text-white">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://nextjs.org"
+              className="text-white"
+            >
               <svg
                 height="30px"
                 viewBox="0 0 207 124"
@@ -51,6 +56,7 @@ export default function Footer({ settings }) {
             </a>{' '}
             Open sourced on
             <a
+              rel="noreferrer"
               target="_blank"
               href="https://github.com/tao101/my-portfolio-v3-web"
             >
@@ -68,7 +74,7 @@ export default function Footer({ settings }) {
               </svg>
             </a>
             deployed on{' '}
-            <a target="_blank" href="https://vercel.com">
+            <a rel="noreferrer" target="_blank" href="https://vercel.com">
               <svg
                 version="1.1"
                 id="layer"

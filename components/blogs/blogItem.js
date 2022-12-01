@@ -12,7 +12,7 @@ export default function BlogItem({ blog }) {
         <a className="flex-1 rounded-lg overflow-hidden ">
           <img
             className=" hover:scale-125 ease-in duration-500 hover:cursor-pointer"
-            src={urlFor(blog?.image?.image)}
+            src={urlFor(blog?.image?.image).width(341).height(164)}
             alt={blog?.image?.alt}
           />
         </a>

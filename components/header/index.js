@@ -62,9 +62,7 @@ export default function Header({ settings }) {
                 ? {
                     y: '-100%',
                   }
-                : {
-                    y: '0%',
-                  }
+                : false
             }
             animate={{
               y: ['-75%', '-50%', '-25%', '0%'],

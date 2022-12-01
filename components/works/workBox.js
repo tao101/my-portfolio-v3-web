@@ -38,6 +38,7 @@ export default function WorkBox({ item, index }) {
             <div className="flex  absolute group-hover:translate-x-0  left-0 top-0 z-30 h-full w-full -translate-x-[102%] transform items-center justify-center gap-4 overflow-hidden bg-grey bg-opacity-80 transition-all duration-500 ">
               {photoGallery && photoGallery?.length > 0 && (
                 <button
+                name='open photo galarey'
                   onClick={() => {
                     setOpenPhotoGalarey(!openPhotoGalarey);
                   }}
@@ -61,6 +62,7 @@ export default function WorkBox({ item, index }) {
               )}
               {youtubeUrl && youtubeUrl != '' && (
                 <button
+                name='open youtube video'
                   onClick={() => setOpenYoutubeVideo(!openYoutubeVideo)}
                   className="inline-flex h-10 min-h-0 w-10 items-center justify-center rounded-full bg-secondary-400 p-0 text-center text-lg text-grey"
                 >

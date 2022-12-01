@@ -38,7 +38,7 @@ export default function Home({ settings, homePage }) {
           <div className="z-20 w-48 h-48  bg-transparent rounded-full overflow-hidden bg-main-900">
             <img
               alt={profilePicAlt}
-              src={urlFor(profilePic).width(192).height(192)}
+              src={urlFor(profilePic).width(384).height(384)}
               className="w-48 h-48 bg-gradient-to-tr from-secondary-400 to-transparent"
             />
           </div>

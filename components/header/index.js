@@ -81,6 +81,7 @@ export default function Header({ settings }) {
               </Link>
               <div className="lg:hidden">
                 <button
+                  name="mobile Menu"
                   onClick={() => setMobileMenuVisibility(true)}
                   className="group  relative text-secondary-400 bg-secondary-400/10 p-2 w-fit rounded-md cursor-pointer hover:text-black hover:bg-white hover:transition-colors duration-500 lg:hidden"
                 >

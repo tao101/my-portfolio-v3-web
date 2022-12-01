@@ -91,6 +91,7 @@ export default function Works({ homePage, works }) {
 
       {selectedWorks?.length != visibleWorks?.length && (
         <button
+        name='load more posts'
           onClick={() =>
             setVisibleWorksLength(visibleWorksLength + numberOfItems)
           }

@@ -110,7 +110,8 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
               </div>
               <div className="pt-10 flex gap-7 text-center ">
                 {index > 0 && (
-                  <button
+                  <button 
+                  name='previous posts'
                     onClick={() => {
                       let newIndex = index - postPerPage;
                       setIndex(newIndex > 0 ? newIndex : 0);
@@ -122,6 +123,7 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
                 )}
                 {index + postPerPage < blogs.length && (
                   <button
+                  name='next posts'
                     onClick={() => {
                       let newIndex = index + postPerPage;
                       setIndex(newIndex);

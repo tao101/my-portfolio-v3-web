@@ -190,6 +190,7 @@ export default function Post({ settings, slug, blog, publishedComments }) {
                     />
                   </div>
                   <button
+                    name="submit"
                     type="submit"
                     className="bg-secondary-400 py-2.5 px-5 rounded w-fit hover:scale-110 active:scale-90 "
                   >
@@ -200,6 +201,7 @@ export default function Post({ settings, slug, blog, publishedComments }) {
               {!addComment && (
                 <div className="w-full h-full flex flex-col justify-between  space-y-4">
                   <button
+                    name="add a comment"
                     onClick={() => setAddComment(true)}
                     className="bg-secondary-400 py-2.5 px-5 rounded w-fit hover:scale-110 active:scale-90 "
                   >

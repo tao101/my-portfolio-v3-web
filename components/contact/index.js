@@ -228,6 +228,7 @@ export default function Contact({ settings }) {
               />
             </div>
             <button
+             name='submit'
               type="submit"
               className="bg-secondary-400 py-2.5 px-5 rounded w-fit hover:scale-110 active:scale-90 "
             >

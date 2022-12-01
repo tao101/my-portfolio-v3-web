@@ -16,9 +16,19 @@ import Skills from '../components/skills';
 import Services from '../components/services';
 import Resume from '../components/resume';
 import Works from '../components/works';
-import Reviews from '../components/reviews';
-import Blogs from '../components/blogs';
+//import Reviews from '../components/reviews';
+//import Blogs from '../components/blogs';
 import Contact from '../components/contact';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+const Reviews = dynamic(() => import('../components/reviews'), {
+  suspense: true,
+});
+
+const Blogs = dynamic(() => import('../components/blogs'), {
+  suspense: true,
+});
 
 export default function Index({ settings, homePage, works, blogs }) {
   let seoTitle =
@@ -71,8 +81,13 @@ export default function Index({ settings, homePage, works, blogs }) {
           <Services homePage={homePage} />
           <Resume homePage={homePage} />
           <Works homePage={homePage} works={works} />
-          <Reviews homePage={homePage} />
-          <Blogs blogs={blogs} />
+          <Suspense fallback={`Loading...`}>
+            <Reviews homePage={homePage} />
+          </Suspense>
+          <Suspense fallback={`Loading...`}>
+            <Blogs blogs={blogs} />
+          </Suspense>
+
           <Contact settings={settings} />
         </main>
       </div>

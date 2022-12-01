@@ -8,7 +8,7 @@ export default function SocialIcon({ name, url }) {
       href={url}
       target="_blank"
       rel="noreferrer"
-      className="group relative inline-block h-10 w-10 overflow-hidden border border-white border-opacity-10 text-center align-middle text-lg leading-none text-body rounded"
+      className="group relative inline-block h-12 w-12 overflow-hidden border border-white border-opacity-10 text-center align-middle text-lg leading-none text-body rounded"
     >
       <span className="text-gray-300 relative left-0 top-0 flex h-full w-full translate-y-0 transform items-center justify-center rounded  transition-all duration-500 group-hover:-translate-y-full">
         {icon}

@@ -3,8 +3,8 @@ import SocialIcons from '../socialIcons';
 export default function Footer({ settings }) {
   return (
     <div className="relative w-screen h-24  border-t border-white border-opacity-10 bg-grey bg-opacity-95 backdrop-blur backdrop-filter">
-      <footer className="absolute bottom-0  mx-auto left-0 w-screen h-20 z-20 flex items-center justify-between  ">
-        <div className="flex justify-between items-center  h-full w-full max-w-screen-xl mx-auto">
+      <footer className="absolute bottom-0  mx-auto left-0 w-screen h-24 z-20">
+        <div className="flex flex-col xl:flex-row justify-between items-center gap-4   h-full w-full max-w-screen-xl mx-auto">
           <SocialIcons settings={settings} />
 
           <p className="flex gap-2 items-center text-lg text-[#bfbecb] h-[24px] ">
@@ -55,7 +55,6 @@ export default function Footer({ settings }) {
               href="https://github.com/tao101/my-portfolio-v3-web"
             >
               <svg
-                class="styles__Item-sc-xkvepv-2 fUVEzy"
                 width="24"
                 height="24"
                 viewBox="0 0 14 14"

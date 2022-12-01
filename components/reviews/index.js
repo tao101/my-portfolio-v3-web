@@ -20,7 +20,7 @@ export default function Reviews({ homePage }) {
       <SectionTitle title="CLIENT REVIEWS" subTitle="REVIEWS" />
       <div className="relative mb-12 xl:mb-0 w-full flex flex-co  lg:flex-row justify-between items-stretch overflow-visible	  gap-7 pt-2 lg:pt-4">
         <button
-          className="bg-[#bfbecb] hover:scale-125 hover:bg-secondary-400 w-11 h-11 absolute right-[35%] xl:-right-16 -bottom-12 z-50 xl:top-[calc(50%_-_16px)] rounded-full flex justify-center items-center   "
+          className="bg-[#bfbecb] hover:scale-125 hover:bg-secondary-400 w-11 h-11 absolute right-[35%] xl:-right-16 -bottom-12 z-30 xl:top-[calc(50%_-_16px)] rounded-full flex justify-center items-center   "
           onClick={() => {
             swiperRef.current?.slideNext();
           }}
@@ -43,7 +43,7 @@ export default function Reviews({ homePage }) {
           </div>
         </button>
         <button
-          className="bg-[#bfbecb] hover:scale-125 hover:bg-secondary-400 w-11 h-11 absolute left-[35%] xl:-left-16 -bottom-12 z-50 xl:top-[calc(50%_-_16px)] rounded-full flex justify-center items-center  "
+          className="bg-[#bfbecb] hover:scale-125 hover:bg-secondary-400 w-11 h-11 absolute left-[35%] xl:-left-16 -bottom-12 z-30 xl:top-[calc(50%_-_16px)] rounded-full flex justify-center items-center  "
           onClick={() => {
             swiperRef.current?.slidePrev();
           }}

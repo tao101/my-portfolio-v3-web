@@ -3,11 +3,11 @@ import SocialIcons from '../socialIcons';
 export default function Footer({ settings }) {
   return (
     <div className="relative w-screen h-24  border-t border-white border-opacity-10 bg-grey bg-opacity-95 backdrop-blur backdrop-filter">
-      <footer className="absolute bottom-0  mx-auto left-0 w-screen h-24 z-20">
-        <div className="flex flex-col xl:flex-row justify-between items-center gap-4   h-full w-full max-w-screen-xl mx-auto">
+      <footer className="absolute bottom-0   mx-auto left-0 w-screen h-24 z-20">
+        <div className="flex flex-col my-4 xl:flex-row justify-between items-center gap-4   h-full w-full max-w-screen-xl mx-auto">
           <SocialIcons settings={settings} />
 
-          <p className="flex gap-2 items-center text-lg text-[#bfbecb] h-[24px] ">
+          <p className="flex gap-2 items-center text-sm md:text-base lg:text-lg text-[#bfbecb] h-[24px] ">
             Built with{' '}
             <a target="_blank" href="https://nextjs.org" className="text-white">
               <svg
@@ -94,8 +94,8 @@ export default function Footer({ settings }) {
               </svg>
             </a>
           </p>
-          <p className="text-[#bfbecb] flex gap-2 text-lg">
-            <a className="text-white" href="https://taoufiqlotfi.tech">
+          <p className="text-[#bfbecb] flex gap-2 text-sm md:text-base lg:text-lg">
+            <a className="text-white pb-2" href="https://taoufiqlotfi.tech">
               @TaoufiqLotfi
             </a>
             2020-{new Date().getFullYear()}

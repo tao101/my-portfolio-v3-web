@@ -211,7 +211,7 @@ export default function Post({ settings, slug, blog, publishedComments }) {
             {publishedComments?.length > 0 && (
               <div className="mt-6 card hovercard circleprogress w-full p-4 md:p-5 divide-y divide-secondary-100/20 ">
                 {publishedComments?.map((comment) => {
-                  console.log('commnet', comment);
+                  //console.log('commnet', comment);
                   let timeAgo = timeSince(new Date(comment?.date));
                   return (
                     <div key={uid()} className="flex gap-x-6 py-4  ">

@@ -16,7 +16,7 @@ export default function Contact({ settings }) {
   const onSubmit = async (e) => {
     e.preventDefault();
     //todo: add logic for form submit
-    console.log('onSubmit');
+    //console.log('onSubmit');
 
     try {
       let result = await fetch('/api/sendContact', {
@@ -29,7 +29,7 @@ export default function Contact({ settings }) {
         }),
       });
       result = await result.json();
-      console.log('result ', result);
+      //console.log('result ', result);
       if (result?.status) {
       } else {
       }

@@ -12,7 +12,7 @@ export default function MobileMenu({}) {
 
   const router = useRouter();
   let path = router.asPath;
-  console.log('router', path);
+  //console.log('router', path);
   let currentPath = '';
   if (path.includes('blog')) {
     currentPath = 'blog';

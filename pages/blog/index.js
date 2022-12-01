@@ -169,8 +169,6 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
 export async function getStaticProps(context) {
   let { websiteSettings, blogs } = await getIndexPage();
 
- 
-
   let categoriesCount = {};
   let categories = [];
   blogs.forEach((blog) => {
@@ -184,7 +182,7 @@ export async function getStaticProps(context) {
         categoriesCount[slug] = categoriesCount[slug] + 1;
       }
     });
-    console.log('blog ', blog);
+    //console.log('blog ', blog);
   });
 
   return {

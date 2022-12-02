@@ -38,15 +38,15 @@ export default function Post({ settings, slug, blog, publishedComments }) {
   };
 
   let seoTitle =
-    settings?.seo?.title ??
+    blog?.title + ' - Taoufiq Lotfi Full-stack Javascript Developer' ??
     'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
   let seoDescription =
-    settings?.seo?.description ??
+    blog?.description ??
     "I'm a Full Stack JavaScript developer, and I like making applications of different varieties. I help founders add value to society by crafting software using JavaScript tools";
 
   let seoImage =
-    settings?.seo?.image && urlFor(settings?.seo?.image)
-      ? urlFor(settings?.seo?.image)
+    blog?.image?.image && urlFor(blog?.image?.image)
+      ? urlFor(blog?.image?.image)
       : 'https://cdn.sanity.io/images/ib51129t/production/8a8d04fb88dc24e58751a213235a14ce88a84134-1912x884.png';
 
   return (
@@ -64,8 +64,6 @@ export default function Post({ settings, slug, blog, publishedComments }) {
           images: [
             {
               url: seoImage,
-              width: 1912,
-              height: 884,
               alt: seoTitle,
             },
           ],

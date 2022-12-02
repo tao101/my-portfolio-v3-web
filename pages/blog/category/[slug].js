@@ -20,11 +20,8 @@ export default function BlogCategory({
 
   let visibleBlogs = blogs.slice(index, index + postPerPage);
 
-  let seoTitle =
-    settings?.seo?.title ??
-    'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
+  let seoTitle = 'Taoufiq Lotfi - Blog - ' + currentCategory?.title;
   let seoDescription =
-    settings?.seo?.description ??
     "I'm a Full Stack JavaScript developer, and I like making applications of different varieties. I help founders add value to society by crafting software using JavaScript tools";
 
   let seoImage =
@@ -133,7 +130,7 @@ export default function BlogCategory({
                 )}
                 {index + postPerPage < blogs.length && (
                   <button
-                  name='next posts'
+                    name="next posts"
                     onClick={() => {
                       let newIndex = index + postPerPage;
                       setIndex(newIndex);

@@ -21,7 +21,9 @@ export default function BlogItem({ blog }) {
       <Link href={'/blog/post/' + blog?.slug?.current}>
         <div className="flex-1">
           <h5 className="text-white mt-6 hover:text-secondary-400 mb-3">
-            <Link href={'/blog/post' + blog?.slug?.current}>{blog?.title}</Link>
+            <Link href={'/blog/post/' + blog?.slug?.current}>
+              {blog?.title}
+            </Link>
           </h5>
 
           <p className="text-[#bfbecb] hover:text-secondary-400 hover:cursor-pointer">

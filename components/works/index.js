@@ -48,7 +48,7 @@ export default function Works({ homePage, works }) {
       <SectionTitle title="MY WORKS" subTitle="WORKS" />
       <div className="flex flex-wrap justify-center gap-4">
         <span
-          className={`py-1.5 px-4 rounded text-secondary-400 ${
+          className={`py-1.5 px-4 z-30 rounded text-secondary-400 ${
             selectedCategory == ''
               ? 'bg-secondary-400 cursor-default text-black'
               : 'bg-secondary-400/30 cursor-pointer text-secondary-400'
@@ -65,7 +65,7 @@ export default function Works({ homePage, works }) {
           return (
             <span
               key={category?._id}
-              className={`py-1.5 px-4 rounded  ${
+              className={`py-1.5 px-4 rounded z-30  ${
                 selectedCategory == category?._id
                   ? 'bg-secondary-400 cursor-default text-black'
                   : 'bg-secondary-400/30 cursor-pointer text-secondary-400'
@@ -91,11 +91,11 @@ export default function Works({ homePage, works }) {
 
       {selectedWorks?.length != visibleWorks?.length && (
         <button
-        name='load more posts'
+          name="load more posts"
           onClick={() =>
             setVisibleWorksLength(visibleWorksLength + numberOfItems)
           }
-          className="mt-12 bg-secondary-400 py-1.5 px-4 rounded text-sm	font-medium	"
+          className="mt-12 bg-secondary-400 z-30 py-1.5 px-4 rounded text-sm	font-medium	"
         >
           LOAD MORE
         </button>

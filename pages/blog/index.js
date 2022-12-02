@@ -13,11 +13,8 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
 
   let visibleBlogs = blogs.slice(index, index + postPerPage);
 
-  let seoTitle =
-    settings?.seo?.title ??
-    'Taoufiq Lotfi - Full-stack Javascript Developer Portfolio';
+  let seoTitle = 'Taoufiq Lotfi - Blog';
   let seoDescription =
-    settings?.seo?.description ??
     "I'm a Full Stack JavaScript developer, and I like making applications of different varieties. I help founders add value to society by crafting software using JavaScript tools";
 
   let seoImage =
@@ -110,8 +107,8 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
               </div>
               <div className="pt-10 flex gap-7 text-center ">
                 {index > 0 && (
-                  <button 
-                  name='previous posts'
+                  <button
+                    name="previous posts"
                     onClick={() => {
                       let newIndex = index - postPerPage;
                       setIndex(newIndex > 0 ? newIndex : 0);
@@ -123,7 +120,7 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
                 )}
                 {index + postPerPage < blogs.length && (
                   <button
-                  name='next posts'
+                    name="next posts"
                     onClick={() => {
                       let newIndex = index + postPerPage;
                       setIndex(newIndex);

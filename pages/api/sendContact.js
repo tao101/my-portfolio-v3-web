@@ -14,6 +14,7 @@ export default async function handler(req, res) {
           email: email,
           subject: subject,
           message,
+          _type: 'contactRequest',
         };
 
         let newDoc = await sanityClient.create(doc);

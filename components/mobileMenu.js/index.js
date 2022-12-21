@@ -128,7 +128,7 @@ export default function MobileMenu({}) {
               </a>
             </Link>
           </li>
-          <li className="mt-8">
+          <li className="mt-8" onClick={() => setMobileMenuVisibility(false)}>
             <Link href="/#contact">
               <a className="group text-main-900 bg-secondary-400 py-3 px-4  rounded-md cursor-pointer hover:text-black hover:bg-white hover:transition-colors duration-500 ">
                 HIRE ME

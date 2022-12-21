@@ -304,7 +304,7 @@ export default function Header({ settings }) {
                   </li>
                 </ul>
                 <div className=" flex-2 flex justify-center items-center">
-                  <Link href="/">
+                  <Link href="/#contact">
                     <a className="group relative  text-main-900 bg-secondary-400 py-3 px-4  rounded-md cursor-pointer hover:text-black hover:bg-white hover:transition-colors duration-500 overflow-hidden ">
                       HIRE ME
                     </a>

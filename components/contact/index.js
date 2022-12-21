@@ -70,10 +70,10 @@ export default function Contact({ settings }) {
         theme: 'light',
       });
     } finally {
-      setName('')
-      setEmail('')
-      setSubject('')
-      setMessage('')
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
     }
   };
 

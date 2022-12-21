@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import { sanityClient } from '../../lib/sanity.server';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -8,39 +8,15 @@ export default async function handler(req, res) {
       const { name, email, message, subject } = JSON.parse(req.body);
 
       if (email) {
-        const Mailjet = require('node-mailjet');
+        let doc = {
+          status: 'NEW',
+          name: name,
+          email: email,
+          subject: subject,
+          message,
+        };
 
-        const mailjet = new Mailjet({
-          apiKey: process.env.MJ_APIKEY_PUBLIC || 'your-api-key',
-          apiSecret: process.env.MJ_APIKEY_PRIVATE || 'your-api-secret',
-        });
-
-        const request = mailjet.post('send', { version: 'v3.1' }).request({
-          Messages: [
-            {
-              From: {
-                Email: 'admin@taoufiqlotfi.tech',
-                Name: 'taoufiqlotfi.tech',
-              },
-              To: [
-                {
-                  Email: 'admin@taoufiqlotfi.tech',
-                  Name: 'MY Portfolio',
-                },
-              ],
-              TemplateID: 4377989,
-              TemplateLanguage: true,
-              Subject: 'TaoufiqLotfi.tech: New Contact From Portfolio',
-              Variables: {
-                name: '',
-                email: '',
-                subject: '',
-                message: '',
-              },
-            },
-          ],
-        });
-        let result = await request;
+        let newDoc = await sanityClient.create(doc);
 
         return res.status(200).json({ status: true });
       } else {

@@ -27,13 +27,13 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
       <NextSeo
         title={seoTitle}
         description={seoDescription}
-        canonical="https://taoufiqlotfi.tech/"
+        canonical="https://taoufiqlotfi.tech/blog"
         openGraph={{
           title: seoTitle,
           description: seoDescription,
           type: 'website',
           locale: 'en',
-          url: 'https://taoufiqlotfi.tech/',
+          url: 'https://taoufiqlotfi.tech/blog',
           images: [
             {
               url: seoImage,

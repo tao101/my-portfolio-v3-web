@@ -54,13 +54,13 @@ export default function Post({ settings, slug, blog, publishedComments }) {
       <NextSeo
         title={seoTitle}
         description={seoDescription}
-        canonical="https://taoufiqlotfi.tech/"
+        canonical={`https://taoufiqlotfi.tech/blog/post/${slug}`}
         openGraph={{
           title: seoTitle,
           description: seoDescription,
           type: 'website',
           locale: 'en',
-          url: 'https://taoufiqlotfi.tech/',
+          url: `https://taoufiqlotfi.tech/blog/post/${slug}`,
           images: [
             {
               url: seoImage,

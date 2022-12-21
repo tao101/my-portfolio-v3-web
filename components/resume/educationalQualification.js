@@ -36,7 +36,16 @@ export default function EducationalQualification({ homePage }) {
                   {educationalQualification?.subtitle}
                 </p>
                 <p className="text-[#bfbecb]">
-                  {educationalQualification?.description}
+                  {educationalQualification?.description
+                    ?.split('<br/>')
+                    .map((item, index) => {
+                      return (
+                        <span key={'educationalQualification-' + index}>
+                          {item}
+                          <br />
+                        </span>
+                      );
+                    })}
                 </p>
               </div>
             </div>

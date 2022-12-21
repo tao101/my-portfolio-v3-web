@@ -32,13 +32,13 @@ export default function WorkBox({ item, index }) {
               alt={item?.mainImage?.alt}
               width="100%"
               height="100%"
-              className="z-10"
+              className="z-10 rounded"
             />
             <div className="absolute group-hover:translate-x-0 bg-[#292A3F] blur left-0 top-0 z-20 h-full w-full -translate-x-[102%] transform items-center justify-center gap-4 overflow-hidden bg-grey bg-opacity-80 transition-all duration-500 "></div>
             <div className="flex  absolute group-hover:translate-x-0  left-0 top-0 z-30 h-full w-full -translate-x-[102%] transform items-center justify-center gap-4 overflow-hidden bg-grey bg-opacity-80 transition-all duration-500 ">
               {photoGallery && photoGallery?.length > 0 && (
                 <button
-                name='open photo galarey'
+                  name="open photo galarey"
                   onClick={() => {
                     setOpenPhotoGalarey(!openPhotoGalarey);
                   }}
@@ -62,7 +62,7 @@ export default function WorkBox({ item, index }) {
               )}
               {youtubeUrl && youtubeUrl != '' && (
                 <button
-                name='open youtube video'
+                  name="open youtube video"
                   onClick={() => setOpenYoutubeVideo(!openYoutubeVideo)}
                   className="inline-flex h-10 min-h-0 w-10 items-center justify-center rounded-full bg-secondary-400 p-0 text-center text-lg text-grey"
                 >
@@ -159,7 +159,7 @@ export default function WorkBox({ item, index }) {
               return (
                 <motion.div
                   key={photo?._key}
-                  className="w-fit h-fit flex  flex-col justify-center items-center bg-transparent "
+                  className="w-screen h-screen flex  flex-col justify-center items-center bg-transparent "
                   onClick={() => setOpenPhotoGalarey(false)}
                   initial={{
                     opacity: 0,
@@ -176,24 +176,22 @@ export default function WorkBox({ item, index }) {
                     duration: 0.2,
                   }}
                 >
-                  <div className="flex flex-col w-fit h-fit  justify-start items-center ">
-                    <img
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                      src={urlFor(photo?.image?.image)}
-                      alt={photo?.image?.alt}
-                      className=" w-[75vw] h-full  object-contain	"
-                    />
-                    <h5
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                      className="pt-8 w-full text-white text-3xl text-center font-medium"
-                    >
-                      {photo?.title}
-                    </h5>
-                  </div>
+                  <img
+                    onClick={(event) => {
+                      event.stopPropagation();
+                    }}
+                    src={urlFor(photo?.image?.image)}
+                    alt={photo?.image?.alt}
+                    className="h-full object-cover	"
+                  />
+                  <h5
+                    onClick={(event) => {
+                      event.stopPropagation();
+                    }}
+                    className="flex-1 pt-8 w-full h-fit text-white text-3xl text-center font-medium"
+                  >
+                    {photo?.title}
+                  </h5>
                 </motion.div>
               );
             })}

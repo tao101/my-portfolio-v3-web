@@ -13,7 +13,7 @@ export default function Home({ settings, homePage }) {
     <>
       <section
         id="home"
-        className="relative h-screen z-20 flex flex-col   justify-center items-center"
+        className="relative min-h-screen pt-20 z-20 flex flex-col   justify-center items-center"
       >
         <motion.div
           initial={{
@@ -101,7 +101,7 @@ export default function Home({ settings, homePage }) {
                 duration: 0.5,
                 delay: 0.4,
               }}
-              className="max-w-screen-lg text-center  font-normal text-lg antialiased"
+              className="max-w-screen-lg text-center  font-normal md:text-lg  antialiased"
               style={{ color: '#bfbecb' }}
             >
               {description}
@@ -127,7 +127,7 @@ export default function Home({ settings, homePage }) {
             duration: 0.5,
             delay: 0.6,
           }}
-          className=" z-20 absolute left-0 top-auto bottom-5 w-full justify-between text-center"
+          className="hidden md:block z-20 absolute left-0 top-auto bottom-5 w-full justify-between text-center"
         >
           <Link href="/#about">
             <a className="cursor-pointer  w-12 h-12 z-20 text-[#bfbecb] text-xs font-medium uppercase tracking-widest transition-all hover:text-secondary-400 antialiased ">

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import SectionTitle from '../sectionTitle';
 import ServiceBox from './serviceBox';
 

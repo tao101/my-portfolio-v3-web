@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export default function ServiceBox({ item, index }) {
   const { _key, serviceDescription, serviceTitle } = item;
@@ -80,28 +81,30 @@ export default function ServiceBox({ item, index }) {
   }
 
   return (
-    <motion.div
-      whileHover={{
-        y: '-10%',
-      }}
-      transition={{
-        duration: 0.1,
-        delay: 0,
-      }}
-      className="relative group card hovercard circleprogress flex-1  flex flex-col   items-stretch p-4 md:p-5  "
-    >
-      <span className="absolute right-0 top-0 p-4 md:p-5 text-5xl pointer-events-none z-0 font-bold uppercase text-heading opacity-5 text-white  ">
-        0{index + 1}
-      </span>
-      <div className="mb-6 group-hover:animate-serviceIcon flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-secondary-400 bg-opacity-10 p-5 text-4xl text-secondary-400">
-        <div className="fill-current text-secondary-400"> {icon}</div>
-      </div>
-      <h5 className="text-lg font-medium antialiased text-white mb-3">
-        {serviceTitle}
-      </h5>
-      <p className="text-[#bfbecb] antialiased text-base	font-normal flex-1	 ">
-        {serviceDescription}
-      </p>
-    </motion.div>
+    <Link href="/#contact">
+      <motion.div
+        whileHover={{
+          y: '-10%',
+        }}
+        transition={{
+          duration: 0.1,
+          delay: 0,
+        }}
+        className="relative cursor-pointer group card hovercard circleprogress flex-1  flex flex-col   items-stretch p-4 md:p-5  "
+      >
+        <span className="absolute right-0 top-0 p-4 md:p-5 text-5xl pointer-events-none z-0 font-bold uppercase text-heading opacity-5 text-white  ">
+          0{index + 1}
+        </span>
+        <div className="mb-6 group-hover:animate-serviceIcon flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-secondary-400 bg-opacity-10 p-5 text-4xl text-secondary-400">
+          <div className="fill-current text-secondary-400"> {icon}</div>
+        </div>
+        <h5 className="text-lg font-medium antialiased text-white mb-3">
+          {serviceTitle}
+        </h5>
+        <p className="text-[#bfbecb] antialiased text-base	font-normal flex-1	 ">
+          {serviceDescription}
+        </p>
+      </motion.div>
+    </Link>
   );
 }

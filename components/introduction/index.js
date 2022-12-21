@@ -22,74 +22,10 @@ export default function Introduction({ homePage }) {
           delay: 0.3,
           duration: 0.5,
         }}
-        className="flex-1 relative lg:flex lg:justify-end rounded-lg border-8 border-secondary-400 border-opacity-20 lg:mr-4 w-full md:w-3/5  mx-auto lg:w-4/5  "
+        className="flex-1 relative  shadow-gray-50 lg:flex lg:justify-end rounded-lg border-8 border-secondary-400 border-opacity-20 lg:mr-4 w-full md:w-3/5  mx-auto lg:w-4/5  "
       >
-        <div className="absolute flex -top-2  z-40 left-1/2 transform -translate-x-1/2  w-[calc(100%_+_20px)] h-2 overflow-hidden">
-          <motion.span
-            initial={{
-              x: '-80%',
-            }}
-            animate={{
-              x: '1850%',
-            }}
-            transition={{
-              duration: 1.8,
-              delay: 0.2,
-              repeat: Infinity,
-            }}
-            className="w-8 h-full   rounded-r-full bg-gradient-to-r from-transparent  to-secondary-400 "
-          ></motion.span>
-        </div>
-        <div className="absolute flex -bottom-2  z-40 left-1/2 transform -translate-x-1/2  w-[calc(100%_+_20px)] h-2 overflow-hidden">
-          <motion.span
-            initial={{
-              x: '1930%',
-            }}
-            animate={{
-              x: '-100%',
-            }}
-            transition={{
-              duration: 1.8,
-              delay: 0.2,
-              repeat: Infinity,
-            }}
-            className="w-8 h-full   rounded-l-full bg-gradient-to-l from-transparent  to-secondary-400 "
-          ></motion.span>
-        </div>
-        <div className="absolute flex -top-2  z-40 -left-2  w-2 h-[calc(100%_+_20px)] overflow-hidden ">
-          <motion.span
-            initial={{
-              y: '1410%',
-            }}
-            animate={{
-              y: '-100%',
-            }}
-            transition={{
-              duration: 1.8,
-              delay: 0.2,
-              repeat: Infinity,
-            }}
-            className="w-full h-8   rounded-t-full bg-gradient-to-t from-transparent  to-secondary-400 "
-          ></motion.span>
-        </div>
-        <div className="absolute flex -top-2  z-40 -right-2  w-2 h-[calc(100%_+_20px)] overflow-hidden ">
-          <motion.span
-            initial={{
-              y: '-80%',
-            }}
-            animate={{
-              y: '1380%',
-            }}
-            transition={{
-              duration: 1.8,
-              delay: 0.2,
-              repeat: Infinity,
-            }}
-            className="w-full h-8   rounded-b-full bg-gradient-to-b from-transparent  to-secondary-400 "
-          ></motion.span>
-        </div>
         <img
-          className="lg:object-cover w-full "
+          className="lg:object-cover w-full border-0 shadow-none bg-transparent	"
           src={urlFor(aboutImage).width(594).height(432)}
           alt={aboutImageAlt}
         />
@@ -145,12 +81,16 @@ export default function Introduction({ homePage }) {
               {': ' + languages}
             </span>
           </li>
-          <li className="mb-1 text-secondary-400 antialiased text-lg font-normal">
-            <span className=" text-[#bfbecb] inline-block w-[150px] font-medium">
-              Address
-            </span>
-            <span className="text-[#bfbecb] font-medium">{': ' + address}</span>
-          </li>
+          {address && address != '' && address != ' ' && (
+            <li className="mb-1 text-secondary-400 antialiased text-lg font-normal">
+              <span className=" text-[#bfbecb] inline-block w-[150px] font-medium">
+                Address
+              </span>
+              <span className="text-[#bfbecb] font-medium">
+                {': ' + address}
+              </span>
+            </li>
+          )}
           <li className="mb-1 text-secondary-400 antialiased text-lg font-normal">
             <span className=" text-[#bfbecb] inline-block w-[150px] font-medium">
               Freelance
@@ -161,7 +101,7 @@ export default function Introduction({ homePage }) {
           </li>
         </ul>
 
-        <div className="my-3">
+        <div className="my-3 z-30">
           <Link href={resumeLink}>
             <a className="text-main-900  bg-secondary-400  py-3 px-5  rounded-md cursor-pointer hover:text-black hover:bg-white hover:transition-colors duration-500 overflow-hidden">
               Download Resume

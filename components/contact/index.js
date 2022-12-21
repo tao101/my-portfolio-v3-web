@@ -79,18 +79,20 @@ export default function Contact({ settings }) {
                   Contact on phone
                 </h5>
                 {contactPhones?.map((phone) => {
+                  let fullText = phone;
+                  let rawPhone = phone.split(' ')[0];
                   let formatedPhone =
-                    phone.substring(0, 4) +
+                    fullText.substring(0, 4) +
                     '-' +
-                    phone.substring(4, 8) +
+                    fullText.substring(4, 8) +
                     '-' +
-                    phone.substring(8, phone.length);
+                    fullText.substring(8, fullText.length);
                   return (
                     <p
                       key={uid(32)}
                       className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2"
                     >
-                      <a href={`tel:${phone}`}>{formatedPhone}</a>
+                      <a href={`tel:${rawPhone}`}>{formatedPhone}</a>
                     </p>
                   );
                 })}
@@ -158,9 +160,10 @@ export default function Contact({ settings }) {
                   return (
                     <p
                       key={uid(32)}
-                      className="antialiased text-[#bfbecb] hover:text-secondary-400 mb-2"
+                      className="antialiased flex gap-2 text-[#bfbecb] hover:text-secondary-400 mb-2"
                     >
-                      {address}
+                      {address} <span className="hidden lg:block">➡️</span>
+                      <span className="flex lg:hidden">⏬</span>
                     </p>
                   );
                 })}
@@ -228,7 +231,7 @@ export default function Contact({ settings }) {
               />
             </div>
             <button
-             name='submit'
+              name="submit"
               type="submit"
               className="bg-secondary-400 py-2.5 px-5 rounded w-fit hover:scale-110 active:scale-90 "
             >

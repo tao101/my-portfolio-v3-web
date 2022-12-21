@@ -11,6 +11,7 @@ import {
   getIndexPage,
 } from '../../../lib/sanityHelpers';
 import timeSince from '../../../utils/timeSince';
+import { toast } from 'react-toastify';
 
 export default function Post({ settings, slug, blog, publishedComments }) {
   //console.log('blog', blog);
@@ -34,7 +35,41 @@ export default function Post({ settings, slug, blog, publishedComments }) {
         }),
       });
       result = await result.json();
-    } catch (error) {}
+      if (result.status) {
+        toast.success('Comment Posted ✅', {
+          position: 'top-right',
+          autoClose: 2500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+      } else {
+        toast.success('There was an error Posting your Comment ❌', {
+          position: 'top-right',
+          autoClose: 2500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+      }
+    } catch (error) {
+      toast.success('There was an error Posting your Comment ❌', {
+        position: 'top-right',
+        autoClose: 2500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+    }
   };
 
   let seoTitle =

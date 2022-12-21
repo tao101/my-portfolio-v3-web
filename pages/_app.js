@@ -2,6 +2,8 @@ import { useState } from 'react';
 import AppContext from '../lib/appContext';
 import '../styles/globals.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function MyApp({ Component, pageProps }) {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
@@ -15,6 +17,7 @@ function MyApp({ Component, pageProps }) {
         }}
       >
         <Component {...pageProps} />
+        <ToastContainer />
       </AppContext.Provider>
     </AnimatePresence>
   );

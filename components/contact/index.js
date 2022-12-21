@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SectionTitle from '../sectionTitle';
 import { uid } from 'uid';
+import { toast } from 'react-toastify';
 
 export default function Contact({ settings }) {
   //console.log('categories ', categories);
@@ -29,11 +30,46 @@ export default function Contact({ settings }) {
         }),
       });
       result = await result.json();
-      //console.log('result ', result);
+      console.log('result ', result);
       if (result?.status) {
+        toast.success('Contact Request Sent ✅', {
+          position: 'top-right',
+          autoClose: 2500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
       } else {
+        console.log('There was an error sending the Contact Request');
+        console.log(result);
+        toast.error('There was an error sending the Contact Request ❌', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log('There was an error sending the Contact Request');
+      console.log(error);
+      toast.error('There was an error sending the Contact Request ❌', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+    }
   };
 
   return (

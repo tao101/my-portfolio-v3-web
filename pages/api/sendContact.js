@@ -18,6 +18,7 @@ export default async function handler(req, res) {
         };
 
         let newDoc = await sanityClient.create(doc);
+        console.log('newDoc ',newDoc);
 
         return res.status(200).json({ status: true });
       } else {

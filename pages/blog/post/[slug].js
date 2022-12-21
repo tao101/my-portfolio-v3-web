@@ -36,16 +36,19 @@ export default function Post({ settings, slug, blog, publishedComments }) {
       });
       result = await result.json();
       if (result.status) {
-        toast.success('Comment Posted ✅', {
-          position: 'top-right',
-          autoClose: 2500,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
+        toast.success(
+          'Comment Posted ✅, It will appear in the comments after approval',
+          {
+            position: 'top-right',
+            autoClose: 2500,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+          }
+        );
       } else {
         toast.success('There was an error Posting your Comment ❌', {
           position: 'top-right',
@@ -69,6 +72,11 @@ export default function Post({ settings, slug, blog, publishedComments }) {
         progress: undefined,
         theme: 'light',
       });
+    } finally {
+      setComment('');
+      setName('');
+      setEmail('');
+      setAddComment(false);
     }
   };
 

@@ -69,6 +69,11 @@ export default function Contact({ settings }) {
         progress: undefined,
         theme: 'light',
       });
+    } finally {
+      setName('')
+      setEmail('')
+      setSubject('')
+      setMessage('')
     }
   };
 

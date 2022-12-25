@@ -81,9 +81,11 @@ export default function Index({ settings, homePage, works, blogs }) {
           <Services homePage={homePage} />
           <Resume homePage={homePage} />
           <Works homePage={homePage} works={works} />
-          <Suspense fallback={`Loading...`}>
+          {/*
+            <Suspense fallback={`Loading...`}>
             <Reviews homePage={homePage} />
           </Suspense>
+            */}
           <Suspense fallback={`Loading...`}>
             <Blogs blogs={blogs} />
           </Suspense>

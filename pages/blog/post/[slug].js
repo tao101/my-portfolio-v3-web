@@ -125,13 +125,13 @@ export default function Post({ settings, slug, blog, publishedComments }) {
               opacity: 0.5,
             }}
           ></div>
-          <h1 className="px-2 capitalize flex mb-2 text-secondary-400 antialiased font-bold text-4xl	pt-20">
+          <h1 className="px-2 capitalize max-w-screen-xl text-center flex mb-2 text-secondary-400 antialiased font-bold text-4xl	pt-20">
             {blog?.title}
           </h1>
         </div>
       </div>
       <div className="relative flex flex-col min-h-screen w-screen max-w-screen-xl mx-auto ">
-        <main className="relative w-full px-2 bg-white-100 z-0 flex-1  py-28 mx-2">
+        <main className="relative w-full px-2 bg-white-100 z-0 flex-1  py-16 mx-2">
           <div className="absolute top-0 left-0 flex h-[100%] -z-10 mx-auto w-full justify-around">
             <span className="border-r border-white border-opacity-5"></span>
             <span className="border-r border-white border-opacity-5"></span>
@@ -142,7 +142,7 @@ export default function Post({ settings, slug, blog, publishedComments }) {
           <div className="z-20">
             {blog?.image?.image && (
               <img
-                className="mb-5 rounded border border-white border-opacity-20"
+                className="mb-14  mx-auto rounded border border-white border-opacity-20"
                 src={urlFor(blog?.image?.image)}
                 alt={blog?.image?.alt}
               />

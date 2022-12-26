@@ -11,6 +11,10 @@ import { useRef } from 'react';
 export default function Blogs({ blogs }) {
   const swiperRef = useRef(null);
 
+  if (blogs?.length < 1) {
+    return null;
+  }
+
   return (
     <section
       id="blogs"
@@ -19,7 +23,7 @@ export default function Blogs({ blogs }) {
       <SectionTitle title="LATEST BLOGS" subTitle="BLOGS" />
       <div className="relative mb-12 xl:mb-0 w-full flex flex-co  lg:flex-row justify-between items-stretch overflow-visible gap-7 pt-2 lg:pt-4">
         <button
-        name='next blog'
+          name="next blog"
           className="bg-[#bfbecb] hover:scale-125 hover:bg-secondary-400 w-11 h-11 absolute right-[35%] xl:-right-16 -bottom-12 z-30 xl:top-[calc(50%_-_16px)] rounded-full flex justify-center items-center   "
           onClick={() => {
             swiperRef.current?.slideNext();
@@ -43,7 +47,7 @@ export default function Blogs({ blogs }) {
           </div>
         </button>
         <button
-         name='previous blog'
+          name="previous blog"
           className="bg-[#bfbecb] hover:scale-125 hover:bg-secondary-400 w-11 h-11 absolute left-[35%] xl:-left-16 -bottom-12 z-30 xl:top-[calc(50%_-_16px)] rounded-full flex justify-center items-center  "
           onClick={() => {
             swiperRef.current?.slidePrev();

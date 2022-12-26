@@ -82,7 +82,7 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
                     >
                       <div className="flex-1 rounded-lg overflow-hidden ">
                         <Link href={'/blog/post/' + blog?.slug?.current}>
-                          <a className="flex-1 rounded-lg overflow-hidden ">
+                          <a className="h-full rounded-lg overflow-hidden ">
                             <img
                               className=" hover:scale-125 ease-in duration-500 hover:cursor-pointer"
                               src={urlFor(blog?.image?.image)}
@@ -91,12 +91,12 @@ export default function Blog({ settings, categories, categoriesCount, blogs }) {
                           </a>
                         </Link>
                       </div>
-                      <div className="flex-1">
-                        <h5 className="text-white mt-6 hover:text-secondary-400 mb-3">
+                      <div className="flex-1 ">
+                        <h4 className="text-white mt-6 hover:text-secondary-400 mb-3">
                           <Link href={'/blog/post/' + blog?.slug?.current}>
                             <a> {blog?.title}</a>
                           </Link>
-                        </h5>
+                        </h4>
                         <p className="text-[#bfbecb] hover:text-secondary-400 hover:cursor-pointer">
                           {blog?.description}
                         </p>

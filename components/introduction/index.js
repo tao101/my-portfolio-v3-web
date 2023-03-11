@@ -96,10 +96,7 @@ export default function Introduction({ homePage }) {
               Contracts
             </span>
             <span className="text-[#bfbecb] font-medium">
-              {': ' +
-                (freelance
-                  ? "I'm available for freelance work and can invoice through UK LTD or US LLC. Contact me for more details."
-                  : 'Unavailable')}
+              {': ' + (freelance ? 'Available' : 'Unavailable')}
             </span>
           </li>
         </ul>

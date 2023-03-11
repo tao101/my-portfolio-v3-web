@@ -82,21 +82,24 @@ export default function Introduction({ homePage }) {
             </span>
           </li>
           {address && address != '' && address != ' ' && (
-            <li className="mb-1 text-secondary-400 antialiased text-lg font-normal">
-              <span className=" text-[#bfbecb] inline-block w-[150px] font-medium">
+            <li className="mb-1 flex text-secondary-400 antialiased text-lg font-normal">
+              <span className=" text-[#bfbecb] inline-block w-[200px] font-medium">
                 Address
               </span>
-              <span className="text-[#bfbecb] font-medium">
+              <span className="text-[#bfbecb]  font-medium">
                 {': ' + address}
               </span>
             </li>
           )}
-          <li className="mb-1 text-secondary-400 antialiased text-lg font-normal">
-            <span className=" text-[#bfbecb] inline-block w-[150px] font-medium">
-              Freelance
+          <li className="mb-1 flex text-secondary-400 antialiased text-lg font-normal">
+            <span className=" text-[#bfbecb] inline-block min-w-[150px] font-medium">
+              Contracts
             </span>
             <span className="text-[#bfbecb] font-medium">
-              {': ' + (freelance ? 'Available' : 'Unavailable')}
+              {': ' +
+                (freelance
+                  ? "I'm available for freelance work and can invoice through UK LTD or US LLC. Contact me for more details."
+                  : 'Unavailable')}
             </span>
           </li>
         </ul>

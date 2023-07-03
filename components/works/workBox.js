@@ -28,11 +28,9 @@ export default function WorkBox({ item, index }) {
         >
           <div className="mb-4 group">
             <img
-              src={urlFor(item?.mainImage?.image).width(345).height(241)}
+              src={urlFor(item?.mainImage?.image).height(241)}
               alt={item?.mainImage?.alt}
-              width="100%"
-              height="100%"
-              className="z-10 rounded"
+              className="w-full h-[241px] z-10 rounded object-contain	 "
             />
             <div className="absolute group-hover:translate-x-0 bg-[#292A3F] blur left-0 top-0 z-20 h-full w-full -translate-x-[102%] transform items-center justify-center gap-4 overflow-hidden bg-grey bg-opacity-80 transition-all duration-500 "></div>
             <div className="flex  absolute group-hover:translate-x-0  left-0 top-0 z-30 h-full w-full -translate-x-[102%] transform items-center justify-center gap-4 overflow-hidden bg-grey bg-opacity-80 transition-all duration-500 ">
@@ -182,7 +180,7 @@ export default function WorkBox({ item, index }) {
                     }}
                     src={urlFor(photo?.image?.image)}
                     alt={photo?.image?.alt}
-                    className="h-full object-cover	"
+                    className="h-full object-contain		"
                   />
                   <h5
                     onClick={(event) => {
